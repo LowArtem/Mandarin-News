@@ -1,0 +1,15 @@
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\MandarinNews.exe.config
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\MandarinNews.exe
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\MandarinNews.pdb
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\NewsAPI.dll
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\Newtonsoft.Json.dll
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\NewsAPI.xml
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\bin\Release\Newtonsoft.Json.xml
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.Form1.resources
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.Properties.Resources.resources
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.csproj.GenerateResource.cache
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.csproj.CopyComplete
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.exe
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.pdb
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.csprojAssemblyReference.cache
