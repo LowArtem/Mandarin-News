@@ -132,7 +132,6 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.DescriptionRTB);
             this.panel1.Controls.Add(this.TitleRTB);
@@ -157,7 +156,7 @@
             this.DescriptionRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DescriptionRTB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.DescriptionRTB.BackColor = System.Drawing.Color.White;
             this.DescriptionRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescriptionRTB.Location = new System.Drawing.Point(16, 450);
             this.DescriptionRTB.Name = "DescriptionRTB";
@@ -171,7 +170,7 @@
             this.TitleRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TitleRTB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TitleRTB.BackColor = System.Drawing.Color.White;
             this.TitleRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TitleRTB.Location = new System.Drawing.Point(16, 307);
             this.TitleRTB.Name = "TitleRTB";
@@ -185,12 +184,12 @@
             this.UrlRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.UrlRTB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.UrlRTB.BackColor = System.Drawing.Color.White;
             this.UrlRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.UrlRTB.Location = new System.Drawing.Point(170, 178);
+            this.UrlRTB.Location = new System.Drawing.Point(170, 184);
             this.UrlRTB.Name = "UrlRTB";
             this.UrlRTB.ReadOnly = true;
-            this.UrlRTB.Size = new System.Drawing.Size(560, 45);
+            this.UrlRTB.Size = new System.Drawing.Size(560, 83);
             this.UrlRTB.TabIndex = 10;
             this.UrlRTB.Text = "";
             // 
@@ -199,9 +198,9 @@
             this.AuthorRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AuthorRTB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.AuthorRTB.BackColor = System.Drawing.Color.White;
             this.AuthorRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.AuthorRTB.Location = new System.Drawing.Point(170, 123);
+            this.AuthorRTB.Location = new System.Drawing.Point(170, 129);
             this.AuthorRTB.Name = "AuthorRTB";
             this.AuthorRTB.ReadOnly = true;
             this.AuthorRTB.Size = new System.Drawing.Size(560, 45);
@@ -213,9 +212,9 @@
             this.SourceRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SourceRTB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.SourceRTB.BackColor = System.Drawing.Color.White;
             this.SourceRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SourceRTB.Location = new System.Drawing.Point(170, 68);
+            this.SourceRTB.Location = new System.Drawing.Point(170, 74);
             this.SourceRTB.Name = "SourceRTB";
             this.SourceRTB.ReadOnly = true;
             this.SourceRTB.Size = new System.Drawing.Size(560, 45);
@@ -227,9 +226,9 @@
             this.PublishAtRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PublishAtRTB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.PublishAtRTB.BackColor = System.Drawing.Color.White;
             this.PublishAtRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PublishAtRTB.Location = new System.Drawing.Point(170, 13);
+            this.PublishAtRTB.Location = new System.Drawing.Point(170, 19);
             this.PublishAtRTB.Name = "PublishAtRTB";
             this.PublishAtRTB.ReadOnly = true;
             this.PublishAtRTB.Size = new System.Drawing.Size(560, 45);
@@ -319,7 +318,7 @@
             this.ResultLbl.AutoSize = true;
             this.ResultLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResultLbl.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ResultLbl.Location = new System.Drawing.Point(1211, 51);
+            this.ResultLbl.Location = new System.Drawing.Point(1208, 51);
             this.ResultLbl.Name = "ResultLbl";
             this.ResultLbl.Size = new System.Drawing.Size(22, 24);
             this.ResultLbl.TabIndex = 15;
@@ -341,7 +340,7 @@
             // UC_Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.RefreshBtn);
             this.Controls.Add(this.ResultLbl);
             this.Controls.Add(this.label7);
@@ -354,6 +353,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UC_Home";
             this.Size = new System.Drawing.Size(1293, 720);
+            this.BackColorChanged += new System.EventHandler(this.UC_Home_BackColorChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox1)).EndInit();

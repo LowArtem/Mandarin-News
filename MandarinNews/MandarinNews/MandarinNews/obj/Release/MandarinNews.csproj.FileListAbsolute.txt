@@ -12,4 +12,7 @@ C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\Mandarin
 C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.csproj.CopyComplete
 C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.exe
 C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.pdb
-C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.UC_AllNews.resources
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.UC_Home.resources
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.UC_Settings.resources
+C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Release\MandarinNews.UC_Sources.resources

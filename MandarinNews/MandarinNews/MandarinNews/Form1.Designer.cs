@@ -268,7 +268,7 @@
             // 
             // FillPanel
             // 
-            this.FillPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.FillPanel.BackColor = System.Drawing.Color.White;
             this.FillPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FillPanel.Location = new System.Drawing.Point(79, 53);
             this.FillPanel.Name = "FillPanel";
@@ -282,7 +282,7 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1372, 773);
             this.Controls.Add(this.FillPanel);
             this.Controls.Add(this.LeftPanel);

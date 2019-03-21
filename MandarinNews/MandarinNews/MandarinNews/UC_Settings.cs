@@ -10,46 +10,60 @@ namespace MandarinNews
         {
             InitializeComponent();
 
-            LanguageCB.SelectedIndex = 0;
             CategoryCB.SelectedIndex = 0;
             CountryCB.SelectedIndex = 0;
             SortCB.SelectedIndex = 0;
             ThemeCB.SelectedIndex = 0;
             InterfaceLanguageCB.SelectedIndex = 0;
+
         }
 
-        private void LanguageCB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (LanguageCB.SelectedIndex == 0)
-                Form1.LanguageSetting = NewsAPI.Constants.Languages.RU;
-            if (LanguageCB.SelectedIndex == 1)
-                Form1.LanguageSetting = NewsAPI.Constants.Languages.EN;
-            if (LanguageCB.SelectedIndex == 2)
-                Form1.LanguageSetting = NewsAPI.Constants.Languages.FR;
-            if (LanguageCB.SelectedIndex == 3)
-                Form1.LanguageSetting = NewsAPI.Constants.Languages.DE;
-        }
 
         private void CountryCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Form1.isParamChanged = true;
+
             if (CountryCB.SelectedIndex == 0)
+            {
                 Form1.CountrySetting = NewsAPI.Constants.Countries.RU;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.RU;
+            }
             if (CountryCB.SelectedIndex == 1)
+            {
                 Form1.CountrySetting = NewsAPI.Constants.Countries.US;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.EN;
+            }
             if (CountryCB.SelectedIndex == 2)
+            {
                 Form1.CountrySetting = NewsAPI.Constants.Countries.GB;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.EN;
+            }
             if (CountryCB.SelectedIndex == 3)
+            {
                 Form1.CountrySetting = NewsAPI.Constants.Countries.FR;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.FR;
+            }
             if (CountryCB.SelectedIndex == 4)
+            {
                 Form1.CountrySetting = NewsAPI.Constants.Countries.DE;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.DE;
+            }
             if (CountryCB.SelectedIndex == 5)
+            {
                 Form1.CountrySetting = NewsAPI.Constants.Countries.UA;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.UK;
+            }
             if (CountryCB.SelectedIndex == 6)
-                Form1.CountrySetting = 0; // если выбран этот параметр, значит страна пустая (все страны)
+            {
+                Form1.CountrySetting = NewsAPI.Constants.Countries.IT;
+                Form1.LanguageSetting = NewsAPI.Constants.Languages.IT;
+            }
         }
 
         private void SortCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Form1.isParamChanged = true;
+
             if (SortCB.SelectedIndex == 0)
                 Form1.SortSetting = NewsAPI.Constants.SortBys.Relevancy;
             if (SortCB.SelectedIndex == 1)
@@ -60,6 +74,8 @@ namespace MandarinNews
 
         private void CategoryCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Form1.isParamChanged = true;
+
             if (CategoryCB.SelectedIndex == 0)
                 Form1.CategorySetting = 0; // если выбран этот параметр, значит категория пустая (все категории)
             if (CategoryCB.SelectedIndex == 1)
@@ -95,6 +111,7 @@ namespace MandarinNews
                 Form1.ThemeSetting = Color.AliceBlue;
             if (ThemeCB.SelectedIndex == 7)
                 Form1.ThemeSetting = Color.Black;
+
         }
 
         private void InterfaceLanguageCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,10 +124,68 @@ namespace MandarinNews
 
         private void DateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            Form1.isParamChanged = true;
+
             if (DateCheckBox.CheckState == CheckState.Checked)
                 Form1.isOnlyTodaysNews = true;
             else
                 Form1.isOnlyTodaysNews = false;
+        }
+
+        private void UC_Settings_BackColorChanged(object sender, EventArgs e)
+        {
+            if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
+            {
+                label2.ForeColor = Color.White;
+                label3.ForeColor = Color.White;
+                label4.ForeColor = Color.White;
+                label5.ForeColor = Color.White;
+                label6.ForeColor = Color.White;
+
+                CategoryCB.ForeColor = Color.White;
+                CategoryCB.BackColor = this.BackColor;
+
+                SortCB.ForeColor = Color.White;
+                SortCB.BackColor = this.BackColor;
+
+                ThemeCB.ForeColor = Color.White;
+                ThemeCB.BackColor = this.BackColor;
+
+                CountryCB.ForeColor = Color.White;
+                CountryCB.BackColor = this.BackColor;
+
+                InterfaceLanguageCB.ForeColor = Color.White;
+                InterfaceLanguageCB.BackColor = this.BackColor;
+
+                DateCheckBox.BackColor = this.BackColor;
+                DateCheckBox.ForeColor = Color.White;
+            }
+            else
+            {
+                label2.ForeColor = Color.Black;
+                label3.ForeColor = Color.Black;
+                label4.ForeColor = Color.Black;
+                label5.ForeColor = Color.Black;
+                label6.ForeColor = Color.Black;
+
+                CategoryCB.ForeColor = Color.Black;
+                CategoryCB.BackColor = Color.WhiteSmoke;
+
+                SortCB.ForeColor = Color.Black;
+                SortCB.BackColor = Color.WhiteSmoke;
+
+                ThemeCB.ForeColor = Color.Black;
+                ThemeCB.BackColor = Color.WhiteSmoke;
+
+                CountryCB.ForeColor = Color.Black;
+                CountryCB.BackColor = Color.WhiteSmoke;
+
+                InterfaceLanguageCB.ForeColor = Color.Black;
+                InterfaceLanguageCB.BackColor = Color.WhiteSmoke;
+
+                DateCheckBox.BackColor = Color.WhiteSmoke;
+                DateCheckBox.ForeColor = Color.Black;
+            }
         }
     }
 }

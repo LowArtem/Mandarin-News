@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using NewsAPI;
-using NewsAPI.Models;
+﻿using NewsAPI;
 using NewsAPI.Constants;
-using System.Threading.Tasks;
+using NewsAPI.Models;
+using System;
+using System.Collections.Generic;
 
 namespace MandarinNews.Model
 {
@@ -32,7 +29,7 @@ namespace MandarinNews.Model
             Client = new NewsApiClient(API_KEY);
         }
 
-        #region public void Responce(...)
+        #region public void Response(...)
         /// <summary>
         /// Responce to google news api
         /// </summary>
@@ -188,10 +185,182 @@ namespace MandarinNews.Model
 
             InformationSctructuring(page);
         }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">language news</param>
+        /// <param name="dateTime">news in this date time</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(SortBys sort, Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                From = dateTime,
+                Q = searchText,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(SortBys sort, Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                From = dateTime,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Language = lang,
+                From = dateTime,
+                Q = searchText,
+                SortBy = SortBys.Relevancy,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">Language news</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(SortBys sort, Languages lang, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                Q = searchText,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="sort">Sort by</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(Languages lang, SortBys sort, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                From = dateTime,
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(Languages lang, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Q = searchText,
+                SortBy = SortBys.Relevancy,
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Responce to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void Responce(Languages lang, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+
+            InformationSctructuring(page);
+        }
         #endregion
 
 
-        #region public void ResponceHeadlines(...)
+        #region public void ResponseHeadlines(...)
         /// <summary>
         /// Get top headlines from google news api
         /// </summary>
@@ -351,12 +520,188 @@ namespace MandarinNews.Model
 
             InformationSctructuring(page);            
         }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="country">Counrty news</param>
+        /// <param name="searchText">Searching words</param>
+        /// <param name="category">Search category</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, Countries country, string searchText, List<string> source, Categories category, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Country = country,
+                Q = searchText,
+                Category = category,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="searchText">Searching words</param>
+        /// <param name="category">Search category</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, string searchText, List<string> source, Categories category, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Q = searchText,
+                Category = category,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="country">Counrty news</param>
+        /// <param name="category">Search category</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, Countries country, List<string> source, Categories category, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Country = country,
+                Category = category,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="country">Counrty news</param>
+        /// <param name="searchText">Searching words</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, Countries country, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Country = country,
+                Q = searchText,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="category">Search category</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, List<string> source, Categories category, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Category = category,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="country">Counrty news</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, Countries country, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Country = country,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="searchText">Searching words</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                Q = searchText,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Get top headlines from google news api
+        /// </summary>
+        /// <param name="language">Language news</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponceHeadlines(Languages language, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
+            {
+                Language = language,
+                PageSize = pageSize,
+                Sources = source,
+            });
+
+            InformationSctructuring(page);
+        }
         #endregion
 
 
         #region public void InformationSctructuring(int)
         /// <summary>
-        /// Convert information from google api to string params
+        /// Convert information from google api to string params. This method will be using after Response
         /// </summary>
         /// <param name="page">Page number</param>
         public void InformationSctructuring(int page)
