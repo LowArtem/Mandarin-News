@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace MandarinNews
 {
@@ -22,7 +23,9 @@ namespace MandarinNews
 
         public static string searchText { get; set; }
 
-
+        private string folderPath = @"./Files";
+        private string filePath = @"settings.txt";
+        string path;
 
         UC_AllNews uc_allNews;
         UC_Settings uc_settings;
@@ -33,6 +36,9 @@ namespace MandarinNews
         {
             InitializeComponent();
 
+            path = Path.Combine(folderPath, filePath);
+
+
             LanguageSetting = Languages.RU;
             CountrySetting = Countries.RU;
             SortSetting = SortBys.PublishedAt;
@@ -41,6 +47,7 @@ namespace MandarinNews
             InterfaceLanguage = "en";
             isOnlyTodaysNews = false;
             Sources.Add("");
+
 
             isParamChanged = true;
 
@@ -69,7 +76,16 @@ namespace MandarinNews
             uc_home = new UC_Home();
             uc_home.Dock = DockStyle.Fill;
             FillPanel.Controls.Add(uc_home);
+            uc_home.ChangeColor();
             FillPanel.Controls["UC_Home"].BringToFront();
+
+            ThemeColorInit();
+
+
+            if (!Directory.Exists(folderPath))
+                Directory.CreateDirectory(folderPath);
+            if (!File.Exists(path))
+                File.Create(path);
         }
 
         /// <summary>
@@ -143,8 +159,76 @@ namespace MandarinNews
             #endregion
         }
 
+        /// <summary>
+        /// Read from setting file and initialize theme color
+        /// </summary>
+        private void ThemeColorInit()
+        {
+            string Lang = "";
+            string Sort = "";
+            string Country = "";
+            string Category = "";
+            string Theme = "";
+            string FaceLang = "";
+            string OnlyToday = "";
+
+            if (File.Exists(path))
+            {
+                try
+                {
+                    FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
+                    StreamReader reader = new StreamReader(fs, System.Text.Encoding.UTF8);
+
+                    while (!reader.EndOfStream)
+                    {
+                        Lang = reader.ReadLine();
+                        Sort = reader.ReadLine();
+                        Country = reader.ReadLine();
+                        Category = reader.ReadLine();
+                        Theme = reader.ReadLine();
+                        FaceLang = reader.ReadLine();
+                        OnlyToday = reader.ReadLine();
+                    }
+
+                    reader.Close();
+                    fs.Close();
+
+                    ThemeSetting = Color.FromName(Theme);
+
+                    SetTheme();
+                }
+                catch (Exception)
+                {
+                    ThemeSetting = Color.DeepSkyBlue;
+                    SetTheme();
+                }
+            }
+            else
+            {
+                ThemeSetting = Color.DeepSkyBlue;
+                SetTheme();
+            }
+        }
+
+        //
+        // Application Exit
+        //
         private void button2_Click(object sender, EventArgs e)
         {
+            FileStream fs = new FileStream(path, FileMode.Truncate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(fs, System.Text.Encoding.UTF8);
+
+            writer.WriteLine(LanguageSetting.ToString());
+            writer.WriteLine(SortSetting.ToString());
+            writer.WriteLine(CountrySetting.ToString());
+            writer.WriteLine(CategorySetting.ToString());
+            writer.WriteLine(ThemeSetting.Name.ToString());
+            writer.WriteLine(InterfaceLanguage.ToString());
+            writer.WriteLine(isOnlyTodaysNews.ToString());
+
+            writer.Close();
+            fs.Close();
+
             Application.Exit();
         }
 

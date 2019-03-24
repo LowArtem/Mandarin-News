@@ -26,6 +26,8 @@ namespace MandarinNews
         {
             InitializeComponent();
 
+            ChangeColor();
+
             model = new Model.Model();
 
             NEWS_WORD = "news";
@@ -167,6 +169,11 @@ namespace MandarinNews
         }
 
         private void UC_AllNews_BackColorChanged(object sender, EventArgs e)
+        {
+            ChangeColor();
+        }
+
+        private void ChangeColor()
         {
             panel1.BackColor = this.BackColor;
 

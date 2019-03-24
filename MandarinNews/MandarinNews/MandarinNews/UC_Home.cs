@@ -24,6 +24,8 @@ namespace MandarinNews
         {
             InitializeComponent();
 
+            ChangeColor();
+
             model = new Model.Model();
 
             page = 1;
@@ -175,6 +177,11 @@ namespace MandarinNews
 
         private void UC_Home_BackColorChanged(object sender, EventArgs e)
         {
+            ChangeColor();
+        }
+
+        public void ChangeColor()
+        {
             panel1.BackColor = this.BackColor;
 
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
@@ -241,7 +248,6 @@ namespace MandarinNews
                 UrlRTB.BackColor = this.BackColor;
                 UrlRTB.ForeColor = Color.Black;
             }
-
         }
     }
 }

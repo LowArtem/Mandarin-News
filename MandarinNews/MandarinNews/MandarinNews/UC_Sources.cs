@@ -12,6 +12,8 @@ namespace MandarinNews
         {
             InitializeComponent();
 
+            ChangeColor();
+
             ModeCB.SelectedIndex = 0;
             selectedMode = 0;
         }
@@ -178,6 +180,11 @@ namespace MandarinNews
 
         private void UC_Sources_BackColorChanged(object sender, EventArgs e)
         {
+            ChangeColor();
+        }
+        
+        private void ChangeColor()
+        {
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
             {
                 checkBox1.BackColor = this.BackColor;
@@ -289,7 +296,6 @@ namespace MandarinNews
                 label1.ForeColor = Color.Black;
             }
         }
-
 
         private void ModeCB_SelectedIndexChanged(object sender, EventArgs e)
         {

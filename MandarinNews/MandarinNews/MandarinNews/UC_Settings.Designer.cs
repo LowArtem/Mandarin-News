@@ -90,7 +90,6 @@
             "All",
             "Sports",
             "Science",
-            "Business",
             "Entertainment",
             "Health",
             "Technology"});
