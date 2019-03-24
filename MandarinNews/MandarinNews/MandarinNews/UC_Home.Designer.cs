@@ -192,6 +192,7 @@
             this.UrlRTB.Size = new System.Drawing.Size(560, 83);
             this.UrlRTB.TabIndex = 10;
             this.UrlRTB.Text = "";
+            this.UrlRTB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.UrlRTB_MouseClick);
             // 
             // AuthorRTB
             // 

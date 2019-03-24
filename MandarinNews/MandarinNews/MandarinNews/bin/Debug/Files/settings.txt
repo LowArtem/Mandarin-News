@@ -2,6 +2,6 @@
 Relevancy
 RU
 Business
-DeepSkyBlue
+Black
 en
 False

@@ -242,5 +242,11 @@ namespace MandarinNews
                 UrlRTB.ForeColor = Color.Black;
             }
         }
+
+        private void UrlRTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            var url = UrlRTB.Text;
+            System.Diagnostics.Process.Start(url);
+        }
     }
 }

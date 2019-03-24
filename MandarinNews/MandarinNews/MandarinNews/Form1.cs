@@ -88,6 +88,7 @@ namespace MandarinNews
                 File.Create(path);
         }
 
+
         /// <summary>
         /// Set a theme in this app
         /// </summary>
