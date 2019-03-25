@@ -378,5 +378,83 @@ namespace MandarinNews
                 DateCheckBox.ForeColor = Color.Black;
             }
         }
+
+        public void SetLanguage()
+        {
+            int SortIndex = SortCB.SelectedIndex;
+            int ThemeIndex = ThemeCB.SelectedIndex;
+            int CountryIndex = CountryCB.SelectedIndex;
+            int CategoryIndex = CategoryCB.SelectedIndex;
+
+            if (Form1.InterfaceLanguage == "en")
+            {
+                label2.Text = "News language";
+                label3.Text = "News sorting";
+                label4.Text = "News category";
+                label5.Text = "Theme";
+                label6.Text = "Interface language";
+                DateCheckBox.Text = "Show only today's news";
+
+                SortCB.Items.Clear();
+                SortCB.Items.Add("By relevancy");
+                SortCB.Items.Add("By popularity");
+                SortCB.Items.Add("By published at");
+
+                CategoryCB.Items.Clear();
+                CategoryCB.Items.Add("All");
+                CategoryCB.Items.Add("Sports");
+                CategoryCB.Items.Add("Science");
+                CategoryCB.Items.Add("Entertainment");
+                CategoryCB.Items.Add("Health");
+                CategoryCB.Items.Add("Technology");
+
+                ThemeCB.Items.Clear();
+                ThemeCB.Items.Add("Deep sky blue");
+                ThemeCB.Items.Add("Green");
+                ThemeCB.Items.Add("Yellow");
+                ThemeCB.Items.Add("Crimson red");
+                ThemeCB.Items.Add("Magenta");
+                ThemeCB.Items.Add("Dark blue");
+                ThemeCB.Items.Add("White");
+                ThemeCB.Items.Add("Black");
+            }
+            else
+            {
+                label2.Text = "Язык новостей";
+                label3.Text = "Сортировка новостей";
+                label4.Text = "Категория новостей";
+                label5.Text = "Цвет темы";
+                label6.Text = "Язык интерфейса";
+                DateCheckBox.Text = "Показывать только сегодняшние новости";
+
+                SortCB.Items.Clear();
+                SortCB.Items.Add("По релевантности");
+                SortCB.Items.Add("По популярности");
+                SortCB.Items.Add("По дате публикации");
+
+                CategoryCB.Items.Clear();
+                CategoryCB.Items.Add("Все");
+                CategoryCB.Items.Add("Спорт");
+                CategoryCB.Items.Add("Наука");
+                CategoryCB.Items.Add("Развлечение");
+                CategoryCB.Items.Add("Здоровье");
+                CategoryCB.Items.Add("Технологии");
+
+                ThemeCB.Items.Clear();
+                ThemeCB.Items.Add("Небесный голубой");
+                ThemeCB.Items.Add("Зеленый");
+                ThemeCB.Items.Add("Желтый");
+                ThemeCB.Items.Add("Красный");
+                ThemeCB.Items.Add("Розовый");
+                ThemeCB.Items.Add("Темно-синий");
+                ThemeCB.Items.Add("Белый");
+                ThemeCB.Items.Add("Черный");
+            }
+
+            SortCB.SelectedIndex = SortIndex;
+            CountryCB.SelectedIndex = CountryIndex;
+            ThemeCB.SelectedIndex = ThemeIndex;
+            CategoryCB.SelectedIndex = CategoryIndex;
+        }
     }
 }

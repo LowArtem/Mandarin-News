@@ -297,10 +297,10 @@
             this.ModeCB.FormattingEnabled = true;
             this.ModeCB.Items.AddRange(new object[] {
             "All sources",
-            "Castom sources"});
-            this.ModeCB.Location = new System.Drawing.Point(961, 305);
+            "Custom sources"});
+            this.ModeCB.Location = new System.Drawing.Point(942, 305);
             this.ModeCB.Name = "ModeCB";
-            this.ModeCB.Size = new System.Drawing.Size(194, 30);
+            this.ModeCB.Size = new System.Drawing.Size(238, 30);
             this.ModeCB.TabIndex = 17;
             this.ModeCB.SelectedIndexChanged += new System.EventHandler(this.ModeCB_SelectedIndexChanged);
             // 

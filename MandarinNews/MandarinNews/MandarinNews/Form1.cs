@@ -80,6 +80,7 @@ namespace MandarinNews
             FillPanel.Controls["UC_Home"].BringToFront();
 
             ThemeColorInit();
+            SetLanguage();
 
 
             if (!Directory.Exists(folderPath))
@@ -101,7 +102,6 @@ namespace MandarinNews
             AllNewsBtn.BackColor = ThemeSetting;
             settingsBtn.BackColor = ThemeSetting;
             SignInBtn.BackColor = ThemeSetting;
-            textBox1.BackColor = ThemeSetting;
             button5.BackColor = ThemeSetting;
 
             if (ThemeSetting == Color.Black || ThemeSetting == Color.DarkBlue)
@@ -109,6 +109,7 @@ namespace MandarinNews
                 textBox1.ForeColor = Color.White;
                 button2.ForeColor = Color.White;
                 button3.ForeColor = Color.White;
+                textBox1.BackColor = Color.FromArgb(41, 53, 65);
 
                 uc_settings.BackColor = Color.FromArgb(41, 53, 65);
                 uc_home.BackColor = Color.FromArgb(41, 53, 65);
@@ -125,6 +126,19 @@ namespace MandarinNews
                 uc_home.BackColor = Color.White;
                 uc_allNews.BackColor = Color.White;
                 uc_sources.BackColor = Color.White;
+
+                if (ThemeSetting == Color.DeepSkyBlue)
+                    textBox1.BackColor = Color.LightSkyBlue;
+                if (ThemeSetting == Color.Yellow)
+                    textBox1.BackColor = Color.LightYellow;
+                if (ThemeSetting == Color.SpringGreen)
+                    textBox1.BackColor = Color.LightGreen;
+                if (ThemeSetting == Color.Crimson)
+                    textBox1.BackColor = Color.PaleVioletRed;
+                if (ThemeSetting == Color.Magenta)
+                    textBox1.BackColor = Color.FromArgb(218, 112, 214);
+                if (ThemeSetting == Color.AliceBlue)
+                    textBox1.BackColor = Color.FromArgb(255, 255, 255);
             }
 
             if (ThemeSetting == Color.Yellow || ThemeSetting == Color.AliceBlue)
@@ -211,6 +225,28 @@ namespace MandarinNews
             }
         }
 
+        /// <summary>
+        /// Set a language in this app
+        /// </summary>
+        private void SetLanguage()
+        {
+            if (InterfaceLanguage == "en")
+            {
+                PageLbl.Text = "Home";
+                textBox1.Text = "Search...";
+            }
+            else
+            {
+                PageLbl.Text = "Главная";
+                textBox1.Text = "Поиск...";
+            }
+
+            uc_settings.SetLanguage();
+            uc_sources.SetLanguage();
+            uc_home.SetLanguage();
+            uc_allNews.SetLanguage();
+        }
+
         //
         // Application Exit
         //
@@ -240,7 +276,7 @@ namespace MandarinNews
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Search...")
+            if (textBox1.Text == "Search..." || textBox1.Text == "Поиск...")
                 textBox1.Text = "";
 
             if (textBox1.Text != "" && textBox1.Text != "Search...")
@@ -253,8 +289,8 @@ namespace MandarinNews
         {
             isParamChanged = true;
 
-            if (textBox1.Text == "Search...")
-                textBox1.Text = "";
+            //if (textBox1.Text == "Search...")
+            //    textBox1.Text = "";
 
             if (textBox1.Text != "" && textBox1.Text != "Search...")
             {
@@ -298,11 +334,15 @@ namespace MandarinNews
             WorldPanel.Visible = false;
             AccountPanel.Visible = false;
 
-            PageLbl.Text = "Home";
-
             FillPanel.Controls["UC_Home"].BringToFront();
 
             SetTheme();
+            SetLanguage();
+
+            if (InterfaceLanguage == "en")
+                PageLbl.Text = "Home";
+            else
+                PageLbl.Text = "Главная";
         }
 
         private void settingsBtn_Click(object sender, EventArgs e)
@@ -312,11 +352,15 @@ namespace MandarinNews
             WorldPanel.Visible = false;
             AccountPanel.Visible = false;
 
-            PageLbl.Text = "Settings";
-
             FillPanel.Controls["UC_Settings"].BringToFront();
 
             SetTheme();
+            SetLanguage();
+
+            if (InterfaceLanguage == "en")
+                PageLbl.Text = "Settings";
+            else
+                PageLbl.Text = "Настройки";
         }
 
         private void AllNewsBtn_Click(object sender, EventArgs e)
@@ -326,11 +370,15 @@ namespace MandarinNews
             WorldPanel.Visible = true;
             AccountPanel.Visible = false;
 
-            PageLbl.Text = "All news";
-
             FillPanel.Controls["UC_AllNews"].BringToFront();
 
             SetTheme();
+            SetLanguage();
+
+            if (InterfaceLanguage == "en")
+                PageLbl.Text = "All news";
+            else
+                PageLbl.Text = "Все новости";
         }
 
         private void SignInBtn_Click(object sender, EventArgs e)
@@ -340,12 +388,16 @@ namespace MandarinNews
             WorldPanel.Visible = false;
             AccountPanel.Visible = true;
 
-            PageLbl.Text = "Account";
-
             FillPanel.Controls["UC_Sources"].BringToFront();
 
 
             SetTheme();
+            SetLanguage();
+
+            if (InterfaceLanguage == "en")
+                PageLbl.Text = "Sources";
+            else
+                PageLbl.Text = "Источники";
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -370,6 +422,9 @@ namespace MandarinNews
             }
             else
                 searchText = "";
+
+            SetTheme();
+            SetLanguage();
         }
     }
 }

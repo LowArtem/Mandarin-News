@@ -16,4 +16,3 @@ C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\Mandarin
 C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Debug\MandarinNews.exe
 C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Debug\MandarinNews.pdb
 C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Debug\MandarinNews.UC_Sources.resources
-C:\Users\user\source\repos\Git\GoogleNewsApp\Mandarin-News\MandarinNews\MandarinNews\MandarinNews\obj\Debug\MandarinNews.csprojAssemblyReference.cache

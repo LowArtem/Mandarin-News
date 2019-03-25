@@ -56,9 +56,9 @@
             "Deutsch",
             "Українська",
             "Italiano"});
-            this.CountryCB.Location = new System.Drawing.Point(221, 48);
+            this.CountryCB.Location = new System.Drawing.Point(262, 48);
             this.CountryCB.Name = "CountryCB";
-            this.CountryCB.Size = new System.Drawing.Size(194, 30);
+            this.CountryCB.Size = new System.Drawing.Size(277, 30);
             this.CountryCB.TabIndex = 6;
             this.CountryCB.SelectedIndexChanged += new System.EventHandler(this.CountryCB_SelectedIndexChanged);
             // 
@@ -73,9 +73,9 @@
             "By relevancy",
             "By popularity",
             "By published at"});
-            this.SortCB.Location = new System.Drawing.Point(221, 224);
+            this.SortCB.Location = new System.Drawing.Point(262, 224);
             this.SortCB.Name = "SortCB";
-            this.SortCB.Size = new System.Drawing.Size(194, 30);
+            this.SortCB.Size = new System.Drawing.Size(277, 30);
             this.SortCB.TabIndex = 7;
             this.SortCB.SelectedIndexChanged += new System.EventHandler(this.SortCB_SelectedIndexChanged);
             // 
@@ -93,9 +93,9 @@
             "Entertainment",
             "Health",
             "Technology"});
-            this.CategoryCB.Location = new System.Drawing.Point(221, 433);
+            this.CategoryCB.Location = new System.Drawing.Point(262, 433);
             this.CategoryCB.Name = "CategoryCB";
-            this.CategoryCB.Size = new System.Drawing.Size(194, 30);
+            this.CategoryCB.Size = new System.Drawing.Size(277, 30);
             this.CategoryCB.TabIndex = 8;
             this.CategoryCB.SelectedIndexChanged += new System.EventHandler(this.CategoryCB_SelectedIndexChanged);
             // 
@@ -155,9 +155,9 @@
             "Dark blue",
             "White",
             "Black"});
-            this.ThemeCB.Location = new System.Drawing.Point(891, 47);
+            this.ThemeCB.Location = new System.Drawing.Point(920, 47);
             this.ThemeCB.Name = "ThemeCB";
-            this.ThemeCB.Size = new System.Drawing.Size(194, 30);
+            this.ThemeCB.Size = new System.Drawing.Size(277, 30);
             this.ThemeCB.TabIndex = 14;
             this.ThemeCB.SelectedIndexChanged += new System.EventHandler(this.ThemeCB_SelectedIndexChanged);
             // 
@@ -181,9 +181,9 @@
             this.InterfaceLanguageCB.Items.AddRange(new object[] {
             "English",
             "Русский"});
-            this.InterfaceLanguageCB.Location = new System.Drawing.Point(891, 228);
+            this.InterfaceLanguageCB.Location = new System.Drawing.Point(920, 228);
             this.InterfaceLanguageCB.Name = "InterfaceLanguageCB";
-            this.InterfaceLanguageCB.Size = new System.Drawing.Size(194, 30);
+            this.InterfaceLanguageCB.Size = new System.Drawing.Size(277, 30);
             this.InterfaceLanguageCB.TabIndex = 16;
             this.InterfaceLanguageCB.SelectedIndexChanged += new System.EventHandler(this.InterfaceLanguageCB_SelectedIndexChanged);
             // 

@@ -231,10 +231,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PublishAtRTB.BackColor = System.Drawing.Color.White;
             this.PublishAtRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.PublishAtRTB.Location = new System.Drawing.Point(170, 17);
+            this.PublishAtRTB.Location = new System.Drawing.Point(228, 17);
             this.PublishAtRTB.Name = "PublishAtRTB";
             this.PublishAtRTB.ReadOnly = true;
-            this.PublishAtRTB.Size = new System.Drawing.Size(560, 45);
+            this.PublishAtRTB.Size = new System.Drawing.Size(502, 45);
             this.PublishAtRTB.TabIndex = 7;
             this.PublishAtRTB.Text = "";
             // 

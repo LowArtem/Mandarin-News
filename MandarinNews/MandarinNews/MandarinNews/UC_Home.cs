@@ -86,60 +86,60 @@ namespace MandarinNews
             if (Form1.isParamChanged)
             {
                 if (Form1.CountrySetting != 0 && Form1.CategorySetting != 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
                 else if (Form1.CountrySetting == 0 && Form1.CategorySetting != 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
                 else if (Form1.CategorySetting == 0 && Form1.CountrySetting != 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
                 else if (Form1.CountrySetting == 0 && Form1.CategorySetting == 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
                 else if (Form1.searchText == "" && Form1.CountrySetting != 0 && Form1.CategorySetting != 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
                 else if (Form1.CountrySetting == 0 && Form1.searchText == "" && Form1.CategorySetting != 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
                 else if (Form1.CategorySetting == 0 && Form1.searchText == "" && Form1.CountrySetting != 0)
-                    model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
                 else
-                    model.ResponceHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
+                    model.ResponseHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
 
                 #region Variable 1
                 /*if (UC_Sources.selectedMode == 0)
                 {
                     if (Form1.CountrySetting != 0 && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CountrySetting == 0 && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CategorySetting == 0 && Form1.CountrySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
                     else if (Form1.CountrySetting == 0 && Form1.CategorySetting == 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
                     else if (Form1.searchText == "" && Form1.CountrySetting != 0 && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CountrySetting == 0 && Form1.searchText == "" && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CategorySetting == 0 && Form1.searchText == "" && Form1.CountrySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
                     else
-                        model.ResponceHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
                 }
                 else
                 {
                     if (Form1.CountrySetting != 0 && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CountrySetting == 0 && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CategorySetting == 0 && Form1.CountrySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, PAGE_SIZE, page);
                     else if (Form1.CountrySetting == 0 && Form1.CategorySetting == 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.Sources, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.Sources, PAGE_SIZE, page);
                     else if (Form1.searchText == "" && Form1.CountrySetting != 0 && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CountrySetting == 0 && Form1.searchText == "" && Form1.CategorySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.Sources, Form1.CategorySetting, PAGE_SIZE, page);
                     else if (Form1.CategorySetting == 0 && Form1.searchText == "" && Form1.CountrySetting != 0)
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, Form1.Sources, PAGE_SIZE, page);
                     else
-                        model.ResponceHeadlines(Form1.LanguageSetting, Form1.Sources, PAGE_SIZE, page);
+                        model.ResponseHeadlines(Form1.LanguageSetting, Form1.Sources, PAGE_SIZE, page);
                 }*/
                 #endregion
 
@@ -178,6 +178,12 @@ namespace MandarinNews
         private void UC_Home_BackColorChanged(object sender, EventArgs e)
         {
             ChangeColor();
+        }
+
+        private void UrlRTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            var url = UrlRTB.Text;
+            System.Diagnostics.Process.Start(url);
         }
 
         public void ChangeColor()
@@ -248,12 +254,32 @@ namespace MandarinNews
                 UrlRTB.BackColor = this.BackColor;
                 UrlRTB.ForeColor = Color.Black;
             }
-        }
+        }        
 
-        private void UrlRTB_MouseClick(object sender, MouseEventArgs e)
+        public void SetLanguage()
         {
-            var url = UrlRTB.Text;
-            System.Diagnostics.Process.Start(url);
+            if (Form1.InterfaceLanguage == "en")
+            {
+                label7.Text = "Results:";
+
+                label1.Text = "Published At:";
+                label2.Text = "Source:";
+                label3.Text = "Author:";
+                label4.Text = "URL:";
+                label5.Text = "Title:";
+                label6.Text = "Description:";
+            }
+            else
+            {
+                label7.Text = "Результаты:";
+
+                label1.Text = "Дата публикации:";
+                label2.Text = "Источник:";
+                label3.Text = "Автор:";
+                label4.Text = "URL:";
+                label5.Text = "Заголовок:";
+                label6.Text = "Описание:";
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ namespace MandarinNews.Model
 
         #region public void Response(...)
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="sort">Sort by</param>
         /// <param name="lang">language news</param>
@@ -39,7 +39,7 @@ namespace MandarinNews.Model
         /// <param name="searchText">searching words</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void Responce(SortBys sort, Languages lang, DateTime dateTime, string searchText, int pageSize, int page)
+        public void Response(SortBys sort, Languages lang, DateTime dateTime, string searchText, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -54,13 +54,13 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="sort">Sort by</param>
         /// <param name="lang">Language news</param>
         /// <param name="dateTime">News in this date time</param>
         /// <param name="page">Page number</param>
-        public void Responce(SortBys sort, Languages lang, DateTime dateTime, int pageSize, int page)
+        public void Response(SortBys sort, Languages lang, DateTime dateTime, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -74,13 +74,13 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="dateTime">News in this date time</param>
         /// <param name="searchText">searching words</param>
         /// <param name="page">Page number</param>
-        public void Responce(Languages lang, DateTime dateTime, string searchText, int pageSize, int page)
+        public void Response(Languages lang, DateTime dateTime, string searchText, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -95,13 +95,13 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="sort">Sort by</param>
         /// <param name="lang">Language news</param>
         /// <param name="searchText">searching words</param>
         /// <param name="page">Page number</param>
-        public void Responce(SortBys sort, Languages lang, string searchText, int pageSize, int page)
+        public void Response(SortBys sort, Languages lang, string searchText, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -115,12 +115,12 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="sort">Sort by</param>
         /// <param name="page">Page number</param>
-        public void Responce(Languages lang, SortBys sort, int pageSize, int page)
+        public void Response(Languages lang, SortBys sort, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -133,12 +133,12 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="dateTime">News in this date time</param>
         /// <param name="page">Page number</param>
-        public void Responce(Languages lang, DateTime dateTime, int pageSize, int page)
+        public void Response(Languages lang, DateTime dateTime, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -151,12 +151,12 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="searchText">searching words</param>
         /// <param name="page">Page number</param>
-        public void Responce(Languages lang, string searchText, int pageSize, int page)
+        public void Response(Languages lang, string searchText, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -170,11 +170,11 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="page">Page number</param>
-        public void Responce(Languages lang, int pageSize, int page)
+        public void Response(Languages lang, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -187,7 +187,7 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="sort">Sort by</param>
         /// <param name="lang">language news</param>
@@ -196,7 +196,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(SortBys sort, Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
+        public void Response(SortBys sort, Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -212,14 +212,14 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="sort">Sort by</param>
         /// <param name="lang">Language news</param>
         /// <param name="dateTime">News in this date time</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(SortBys sort, Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
+        public void Response(SortBys sort, Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -234,14 +234,14 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="dateTime">News in this date time</param>
         /// <param name="searchText">searching words</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
+        public void Response(Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -257,14 +257,14 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="sort">Sort by</param>
         /// <param name="lang">Language news</param>
         /// <param name="searchText">searching words</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(SortBys sort, Languages lang, string searchText, List<string> source, int pageSize, int page)
+        public void Response(SortBys sort, Languages lang, string searchText, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -279,13 +279,13 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="sort">Sort by</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(Languages lang, SortBys sort, List<string> source, int pageSize, int page)
+        public void Response(Languages lang, SortBys sort, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -299,13 +299,13 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="dateTime">News in this date time</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
+        public void Response(Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -319,13 +319,13 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="searchText">searching words</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(Languages lang, string searchText, List<string> source, int pageSize, int page)
+        public void Response(Languages lang, string searchText, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -340,12 +340,12 @@ namespace MandarinNews.Model
         }
 
         /// <summary>
-        /// Responce to google news api
+        /// Response to google news api
         /// </summary>
         /// <param name="lang">Language news</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void Responce(Languages lang, List<string> source, int pageSize, int page)
+        public void Response(Languages lang, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetEverything(new EverythingRequest
             {
@@ -370,7 +370,7 @@ namespace MandarinNews.Model
         /// <param name="category">Search category</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, Countries country, string searchText, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, string searchText, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -392,7 +392,7 @@ namespace MandarinNews.Model
         /// <param name="category">Search category</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, string searchText, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, string searchText, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -413,7 +413,7 @@ namespace MandarinNews.Model
         /// <param name="category">Search category</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, Countries country, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -434,7 +434,7 @@ namespace MandarinNews.Model
         /// <param name="searchText">Searching words</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, Countries country, string searchText, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, string searchText, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -454,7 +454,7 @@ namespace MandarinNews.Model
         /// <param name="category">Search category</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -473,7 +473,7 @@ namespace MandarinNews.Model
         /// <param name="country">Counrty news</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, Countries country, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -492,7 +492,7 @@ namespace MandarinNews.Model
         /// <param name="searchText">Searching words</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, string searchText, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, string searchText, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -510,7 +510,7 @@ namespace MandarinNews.Model
         /// <param name="language">Language news</param>
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
-        public void ResponceHeadlines(Languages language, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -531,7 +531,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, Countries country, string searchText, List<string> source, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, string searchText, List<string> source, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -555,7 +555,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, string searchText, List<string> source, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, string searchText, List<string> source, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -578,7 +578,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, Countries country, List<string> source, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, List<string> source, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -601,7 +601,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, Countries country, string searchText, List<string> source, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, string searchText, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -623,7 +623,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, List<string> source, Categories category, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, List<string> source, Categories category, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -644,7 +644,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, Countries country, List<string> source, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, Countries country, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -665,7 +665,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, string searchText, List<string> source, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, string searchText, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {
@@ -685,7 +685,7 @@ namespace MandarinNews.Model
         /// <param name="pageSize">Page counts</param>
         /// <param name="page">Page number</param>
         /// <param name="source">Information source</param>
-        public void ResponceHeadlines(Languages language, List<string> source, int pageSize, int page)
+        public void ResponseHeadlines(Languages language, List<string> source, int pageSize, int page)
         {
             articlesResponse = Client.GetTopHeadlines(new TopHeadlinesRequest
             {

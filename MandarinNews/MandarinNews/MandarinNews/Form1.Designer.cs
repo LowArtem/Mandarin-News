@@ -38,7 +38,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.LeftPanel = new System.Windows.Forms.Panel();
             this.AccountPanel = new System.Windows.Forms.Panel();
             this.WorldPanel = new System.Windows.Forms.Panel();
@@ -77,7 +76,7 @@
             this.PageLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PageLbl.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PageLbl.ForeColor = System.Drawing.Color.Wheat;
-            this.PageLbl.Location = new System.Drawing.Point(434, 3);
+            this.PageLbl.Location = new System.Drawing.Point(414, 3);
             this.PageLbl.Name = "PageLbl";
             this.PageLbl.Size = new System.Drawing.Size(128, 44);
             this.PageLbl.TabIndex = 14;
@@ -89,8 +88,10 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(645, 10);
+            this.button5.Location = new System.Drawing.Point(677, 10);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(56, 36);
             this.button5.TabIndex = 13;
@@ -103,7 +104,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox1.Location = new System.Drawing.Point(705, 14);
+            this.textBox1.Location = new System.Drawing.Point(737, 14);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(302, 30);
             this.textBox1.TabIndex = 11;
@@ -138,6 +139,8 @@
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Right;
             this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(1222, 0);
             this.button3.Name = "button3";
@@ -216,6 +219,8 @@
             this.SignInBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SignInBtn.BackgroundImage")));
             this.SignInBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.SignInBtn.FlatAppearance.BorderSize = 0;
+            this.SignInBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.SignInBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.SignInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SignInBtn.Location = new System.Drawing.Point(12, 320);
             this.SignInBtn.Name = "SignInBtn";
@@ -230,6 +235,8 @@
             this.AllNewsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AllNewsBtn.BackgroundImage")));
             this.AllNewsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.AllNewsBtn.FlatAppearance.BorderSize = 0;
+            this.AllNewsBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.AllNewsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.AllNewsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AllNewsBtn.Location = new System.Drawing.Point(12, 220);
             this.AllNewsBtn.Name = "AllNewsBtn";
@@ -244,6 +251,8 @@
             this.homeBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeBtn.BackgroundImage")));
             this.homeBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.homeBtn.FlatAppearance.BorderSize = 0;
+            this.homeBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.homeBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeBtn.Location = new System.Drawing.Point(12, 20);
             this.homeBtn.Name = "homeBtn";
@@ -258,6 +267,8 @@
             this.settingsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("settingsBtn.BackgroundImage")));
             this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.settingsBtn.FlatAppearance.BorderSize = 0;
+            this.settingsBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.settingsBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsBtn.Location = new System.Drawing.Point(12, 120);
             this.settingsBtn.Name = "settingsBtn";
@@ -312,7 +323,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Panel LeftPanel;
         private System.Windows.Forms.Panel FillPanel;
         private System.Windows.Forms.Button settingsBtn;

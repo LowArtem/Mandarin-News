@@ -182,7 +182,14 @@ namespace MandarinNews
         {
             ChangeColor();
         }
-        
+
+        private void ModeCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedMode = ModeCB.SelectedIndex;
+
+            Form1.isParamChanged = true;
+        }
+
         private void ChangeColor()
         {
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
@@ -297,11 +304,28 @@ namespace MandarinNews
             }
         }
 
-        private void ModeCB_SelectedIndexChanged(object sender, EventArgs e)
+        public void SetLanguage()
         {
-            selectedMode = ModeCB.SelectedIndex;
+            int index = ModeCB.SelectedIndex;
 
-            Form1.isParamChanged = true;
+            if (Form1.InterfaceLanguage == "en")
+            {
+                label1.Text = "Select youre mode";
+
+                ModeCB.Items.Clear();
+                ModeCB.Items.Add("All sources");
+                ModeCB.Items.Add("Custom sources");
+            }
+            else
+            {
+                label1.Text = "Выберите режим";
+
+                ModeCB.Items.Clear();
+                ModeCB.Items.Add("Все источники");
+                ModeCB.Items.Add("Выбранные источники");
+            }
+
+            ModeCB.SelectedIndex = index;
         }
     }
 }

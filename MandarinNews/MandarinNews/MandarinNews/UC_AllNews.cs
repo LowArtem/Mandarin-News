@@ -118,24 +118,24 @@ namespace MandarinNews
                 if (UC_Sources.selectedMode == 0)
                 {
                     if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, PAGE_SIZE, page);
                     else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, PAGE_SIZE, page);
                     else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, PAGE_SIZE, page);
                     else
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, PAGE_SIZE, page);
                 }
                 else
                 {
                     if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
                     else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
                     else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
                     else
-                        model.Responce(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                        model.Response(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
                 }
 
                 Form1.isParamChanged = false;
@@ -171,6 +171,12 @@ namespace MandarinNews
         private void UC_AllNews_BackColorChanged(object sender, EventArgs e)
         {
             ChangeColor();
+        }
+
+        private void UrlRTB_MouseClick(object sender, MouseEventArgs e)
+        {
+            var url = UrlRTB.Text;
+            System.Diagnostics.Process.Start(url);
         }
 
         private void ChangeColor()
@@ -243,10 +249,30 @@ namespace MandarinNews
             }
         }
 
-        private void UrlRTB_MouseClick(object sender, MouseEventArgs e)
+        public void SetLanguage()
         {
-            var url = UrlRTB.Text;
-            System.Diagnostics.Process.Start(url);
+            if (Form1.InterfaceLanguage == "en")
+            {
+                label7.Text = "Results:";
+
+                label1.Text = "Published At:";
+                label2.Text = "Source:";
+                label3.Text = "Author:";
+                label4.Text = "URL:";
+                label5.Text = "Title:";
+                label6.Text = "Description:";
+            }
+            else
+            {
+                label7.Text = "Результаты:";
+
+                label1.Text = "Дата публикации:";
+                label2.Text = "Источник:";
+                label3.Text = "Автор:";
+                label4.Text = "URL:";
+                label5.Text = "Заголовок:";
+                label6.Text = "Описание:";
+            }
         }
     }
 }
