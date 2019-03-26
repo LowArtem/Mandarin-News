@@ -319,7 +319,11 @@ namespace MandarinNews
                     WorldPanel.Visible = true;
                     AccountPanel.Visible = false;
 
-                    PageLbl.Text = "All news";
+                    if (InterfaceLanguage == "en")
+                        PageLbl.Text = "All news";
+                    else
+                        PageLbl.Text = "Все новости";
+
                     FillPanel.Controls["UC_AllNews"].BringToFront();
                 }
                 else
@@ -417,7 +421,11 @@ namespace MandarinNews
                 WorldPanel.Visible = true;
                 AccountPanel.Visible = false;
 
-                PageLbl.Text = "All news";
+                if (InterfaceLanguage == "en")
+                    PageLbl.Text = "All news";
+                else
+                    PageLbl.Text = "Все новости";
+
                 FillPanel.Controls["UC_AllNews"].BringToFront();
             }
             else
