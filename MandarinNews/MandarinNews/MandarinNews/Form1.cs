@@ -278,8 +278,7 @@ namespace MandarinNews
         {
             if (textBox1.Text == "Search..." || textBox1.Text == "Поиск...")
                 textBox1.Text = "";
-
-            if (textBox1.Text != "" && textBox1.Text != "Search...")
+            else if (textBox1.Text != "" && textBox1.Text != "Search..." && textBox1.Text != "Поиск...")
                 searchText = textBox1.Text;
             else
                 searchText = "";

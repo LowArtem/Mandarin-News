@@ -699,6 +699,353 @@ namespace MandarinNews.Model
         #endregion
 
 
+        #region public void ResponseOnPage(...)
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">language news</param>
+        /// <param name="dateTime">news in this date time</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(SortBys sort, Languages lang, DateTime dateTime, string searchText, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                From = dateTime,
+                Q = searchText,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(SortBys sort, Languages lang, DateTime dateTime, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                From = dateTime,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(Languages lang, DateTime dateTime, string searchText, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Language = lang,
+                From = dateTime,
+                Q = searchText,
+                SortBy = SortBys.Relevancy,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">Language news</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(SortBys sort, Languages lang, string searchText, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                Q = searchText,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="sort">Sort by</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(Languages lang, SortBys sort, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(Languages lang, DateTime dateTime, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                From = dateTime,
+                Language = lang,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(Languages lang, string searchText, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Q = searchText,
+                SortBy = SortBys.Relevancy,
+                Language = lang,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="page">Page number</param>
+        public void ResponseOnPage(Languages lang, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Language = lang,
+                PageSize = pageSize,
+                Page = page,
+            });
+
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">language news</param>
+        /// <param name="dateTime">news in this date time</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="pageSize">Page counts</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(SortBys sort, Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                From = dateTime,
+                Q = searchText,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(SortBys sort, Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                From = dateTime,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(Languages lang, DateTime dateTime, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Language = lang,
+                From = dateTime,
+                Q = searchText,
+                SortBy = SortBys.Relevancy,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="sort">Sort by</param>
+        /// <param name="lang">Language news</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(SortBys sort, Languages lang, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                Q = searchText,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="sort">Sort by</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(Languages lang, SortBys sort, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                SortBy = sort,
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="dateTime">News in this date time</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(Languages lang, DateTime dateTime, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                From = dateTime,
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="searchText">searching words</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(Languages lang, string searchText, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Q = searchText,
+                SortBy = SortBys.Relevancy,
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+            PageInformationSctructuring(page);
+        }
+
+        /// <summary>
+        /// Response with page to google news api
+        /// </summary>
+        /// <param name="lang">Language news</param>
+        /// <param name="page">Page number</param>
+        /// <param name="source">Information source</param>
+        public void ResponseOnPage(Languages lang, List<string> source, int pageSize, int page)
+        {
+            articlesResponse = Client.GetEverything(new EverythingRequest
+            {
+                Language = lang,
+                PageSize = pageSize,
+                Sources = source,
+                Page = page,
+            });
+
+
+            PageInformationSctructuring(page);
+        }
+        #endregion
+
+
         #region public void InformationSctructuring(int)
         /// <summary>
         /// Convert information from google api to string params. This method will be using after Response
@@ -709,6 +1056,49 @@ namespace MandarinNews.Model
             if (articlesResponse != null)
             {
                 int counter = 0;
+
+                if (articlesResponse.Status == Statuses.Ok)
+                {
+                    isStatusOk = true;
+
+                    TotalResult = articlesResponse.TotalResults.ToString();
+
+                    foreach (var article in articlesResponse.Articles)
+                    {
+                        counter++;
+
+                        Authors = article.Author;
+                        Description = article.Description;
+                        Title = article.Title;
+                        NameOfSource = article.Source.Name;
+                        URL = article.Url;
+                        UrlImage = article.UrlToImage;
+
+                        if (counter >= page)
+                            break;
+                    }
+                }
+                else
+                {
+                    isStatusOk = false;
+                }
+            }
+            else
+                isStatusOk = false;
+        }
+        #endregion
+
+
+        #region public void PageInformationSctructuring(int)
+        /// <summary>
+        /// Convert information from google api to string params. This method will be using after ResponseOnPage
+        /// </summary>
+        /// <param name="page">Page number</param>
+        public void PageInformationSctructuring(int page)
+        {
+            if (articlesResponse != null)
+            {
+                int counter = 100;
 
                 if (articlesResponse.Status == Statuses.Ok)
                 {
