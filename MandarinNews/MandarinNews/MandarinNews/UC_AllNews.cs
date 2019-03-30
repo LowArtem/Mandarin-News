@@ -202,12 +202,29 @@ namespace MandarinNews
                     PublishedAt = model.PublishedAt;
                 }
                 else
-                    Authors = "Server error :(";
+                {
+                    Title = "Server error :(";
+
+                    Authors = "";
+                    Description = "";
+                    NameOfSource = "";
+                    URL = "";
+                    UrlImage = "";
+                    TotalResult = "";
+                    PublishedAt = "";
+                }
             }
             catch (Exception ex)
             {
-                Authors = "Application error :(";
+                Title = "Application error :(";
                 Description = ex.Message;
+
+                Authors = "";
+                NameOfSource = "";
+                URL = "";
+                UrlImage = "";
+                TotalResult = "";
+                PublishedAt = "";
             }
         }
 
@@ -240,12 +257,12 @@ namespace MandarinNews
 
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
             {
-                label1.ForeColor = Color.White;
+                /*label1.ForeColor = Color.White;
                 label2.ForeColor = Color.White;
                 label3.ForeColor = Color.White;
                 label4.ForeColor = Color.White;
                 label5.ForeColor = Color.White;
-                label6.ForeColor = Color.White;
+                label6.ForeColor = Color.White;*/
                 label7.ForeColor = Color.White;
                 label8.ForeColor = Color.White;
 
@@ -272,12 +289,12 @@ namespace MandarinNews
             }
             else
             {
-                label1.ForeColor = Color.Black;
+                /*label1.ForeColor = Color.Black;
                 label2.ForeColor = Color.Black;
                 label3.ForeColor = Color.Black;
                 label4.ForeColor = Color.Black;
                 label5.ForeColor = Color.Black;
-                label6.ForeColor = Color.Black;
+                label6.ForeColor = Color.Black;*/
                 label7.ForeColor = Color.Black;
                 label8.ForeColor = Color.Black;
 
@@ -310,23 +327,23 @@ namespace MandarinNews
             {
                 label7.Text = "Results:";
 
-                label1.Text = "Published At:";
+                /*label1.Text = "Published At:";
                 label2.Text = "Source:";
                 label3.Text = "Author:";
                 label4.Text = "URL:";
                 label5.Text = "Title:";
-                label6.Text = "Description:";
+                label6.Text = "Description:";*/
             }
             else
             {
                 label7.Text = "Результаты:";
 
-                label1.Text = "Дата публикации:";
+                /*label1.Text = "Дата публикации:";
                 label2.Text = "Источник:";
                 label3.Text = "Автор:";
                 label4.Text = "URL:";
                 label5.Text = "Заголовок:";
-                label6.Text = "Описание:";
+                label6.Text = "Описание:";*/
             }
         }
     }

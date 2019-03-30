@@ -1074,7 +1074,7 @@ namespace MandarinNews.Model
                         NameOfSource = article.Source.Name;
                         URL = article.Url;
                         UrlImage = article.UrlToImage;
-                        PublishedAt = article.PublishedAt.ToString();
+                        PublishedAt = (article.PublishedAt.Value.ToLocalTime()).ToString();
 
                         if (counter >= page)
                             break;
@@ -1091,7 +1091,7 @@ namespace MandarinNews.Model
         #endregion
 
 
-        #region public void PageInformationSctructuring(int)
+        #region public void PageInformationSctructuring(int, int)
         /// <summary>
         /// Convert information from google api to string params. This method will be using after ResponseOnPage
         /// </summary>
@@ -1127,7 +1127,7 @@ namespace MandarinNews.Model
                         NameOfSource = article.Source.Name;
                         URL = article.Url;
                         UrlImage = article.UrlToImage;
-                        PublishedAt = article.PublishedAt.ToString();
+                        PublishedAt = (article.PublishedAt.Value.ToLocalTime()).ToString();
 
                         if (counter >= page)
                             break;
