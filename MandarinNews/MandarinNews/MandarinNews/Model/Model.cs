@@ -22,6 +22,7 @@ namespace MandarinNews.Model
         public string URL { get; private set; }
         public string UrlImage { get; private set; }
         public string TotalResult { get; private set; }
+        public string PublishedAt { get; private set; }
 
 
         public Model()
@@ -721,7 +722,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -742,7 +743,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -764,7 +765,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -785,7 +786,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -804,7 +805,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -823,7 +824,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -843,7 +844,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -861,7 +862,7 @@ namespace MandarinNews.Model
             });
 
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -887,7 +888,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -910,7 +911,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -934,7 +935,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -957,7 +958,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -978,7 +979,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -999,7 +1000,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -1021,7 +1022,7 @@ namespace MandarinNews.Model
                 Page = page,
             });
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
 
         /// <summary>
@@ -1041,7 +1042,7 @@ namespace MandarinNews.Model
             });
 
 
-            PageInformationSctructuring(page);
+            PageInformationSctructuring(page, pageSize);
         }
         #endregion
 
@@ -1073,6 +1074,7 @@ namespace MandarinNews.Model
                         NameOfSource = article.Source.Name;
                         URL = article.Url;
                         UrlImage = article.UrlToImage;
+                        PublishedAt = article.PublishedAt.ToString();
 
                         if (counter >= page)
                             break;
@@ -1094,11 +1096,20 @@ namespace MandarinNews.Model
         /// Convert information from google api to string params. This method will be using after ResponseOnPage
         /// </summary>
         /// <param name="page">Page number</param>
-        public void PageInformationSctructuring(int page)
+        public void PageInformationSctructuring(int page, int PAGE_SIZE)
         {
             if (articlesResponse != null)
             {
                 int counter = 100;
+
+                if (page == PAGE_SIZE || page == PAGE_SIZE + 1)
+                    counter = 100;
+                else
+                {
+                    int сoeff = page / PAGE_SIZE;
+
+                    counter = сoeff * 100;
+                }
 
                 if (articlesResponse.Status == Statuses.Ok)
                 {
@@ -1116,6 +1127,7 @@ namespace MandarinNews.Model
                         NameOfSource = article.Source.Name;
                         URL = article.Url;
                         UrlImage = article.UrlToImage;
+                        PublishedAt = article.PublishedAt.ToString();
 
                         if (counter >= page)
                             break;

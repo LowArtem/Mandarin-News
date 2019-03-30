@@ -291,7 +291,7 @@ namespace MandarinNews
             //if (textBox1.Text == "Search...")
             //    textBox1.Text = "";
 
-            if (textBox1.Text != "" && textBox1.Text != "Search...")
+            if (textBox1.Text != "" && textBox1.Text != "Search..." && textBox1.Text != "Поиск...")
             {
                 searchText = textBox1.Text;
             }
@@ -306,7 +306,7 @@ namespace MandarinNews
                 if (textBox1.Text == "Search...")
                     textBox1.Text = "";
 
-                if (textBox1.Text != "" && textBox1.Text != "Search...")
+                if (textBox1.Text != "" && textBox1.Text != "Search..." && textBox1.Text != "Поиск...")
                 {
                     searchText = textBox1.Text;
 

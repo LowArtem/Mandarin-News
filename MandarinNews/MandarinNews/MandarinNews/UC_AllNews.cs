@@ -14,6 +14,7 @@ namespace MandarinNews
         private string URL;
         private string UrlImage;
         private string TotalResult;
+        private string PublishedAt;
 
 
         private const int PAGE_SIZE = 100;
@@ -73,7 +74,7 @@ namespace MandarinNews
                     if (page <= PAGE_SIZE)
                         page++;
 
-                    if (page >= PAGE_SIZE && page < Convert.ToInt32(model.TotalResult))
+                    if (page > PAGE_SIZE && page < Convert.ToInt32(model.TotalResult))
                     {
                         isMaxPageSize = true;
                         TotalMaxDifference = Convert.ToInt32(model.TotalResult) - page;
@@ -111,94 +112,103 @@ namespace MandarinNews
         //
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            if (Form1.LanguageSetting == NewsAPI.Constants.Languages.RU)
-                NEWS_WORD = "новости";
-            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.IT)
-                NEWS_WORD = "notizie";
-            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.FR)
-                NEWS_WORD = "nouvelles";
-            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.DE)
-                NEWS_WORD = "Nachrichten";
-            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.UK)
-                NEWS_WORD = "новини";
-            else
-                NEWS_WORD = "news";
-
-            if (Form1.isParamChanged || page % PAGE_SIZE == 0)
+            try
             {
-                if (!isMaxPageSize)
+                if (Form1.LanguageSetting == NewsAPI.Constants.Languages.RU)
+                    NEWS_WORD = "новости";
+                else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.IT)
+                    NEWS_WORD = "notizie";
+                else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.FR)
+                    NEWS_WORD = "nouvelles";
+                else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.DE)
+                    NEWS_WORD = "Nachrichten";
+                else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.UK)
+                    NEWS_WORD = "новини";
+                else
+                    NEWS_WORD = "news";
+
+                if (Form1.isParamChanged || page % PAGE_SIZE == 0)
                 {
-                    if (UC_Sources.selectedMode == 0)
+                    if (!isMaxPageSize)
                     {
-                        if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, PAGE_SIZE, page);
-                        else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, PAGE_SIZE, page);
-                        else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, PAGE_SIZE, page);
+                        if (UC_Sources.selectedMode == 0)
+                        {
+                            if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, PAGE_SIZE, page);
+                            else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, PAGE_SIZE, page);
+                            else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, PAGE_SIZE, page);
+                            else
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, PAGE_SIZE, page);
+                        }
                         else
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, PAGE_SIZE, page);
+                        {
+                            if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                            else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                            else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                            else
+                                model.Response(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                        }
                     }
                     else
                     {
-                        if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
-                        else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
-                        else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                        if (UC_Sources.selectedMode == 0)
+                        {
+                            if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, PAGE_SIZE, page);
+                            else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, PAGE_SIZE, page);
+                            else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, PAGE_SIZE, page);
+                            else
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, PAGE_SIZE, page);
+                        }
                         else
-                            model.Response(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                        {
+                            if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                            else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                            else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
+                            else
+                                model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
+                        }
                     }
+
+                    Form1.isParamChanged = false;
                 }
                 else
                 {
-                    if (UC_Sources.selectedMode == 0)
-                    {
-                        if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, PAGE_SIZE, page);
-                        else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, PAGE_SIZE, page);
-                        else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, PAGE_SIZE, page);
-                        else
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, PAGE_SIZE, page);
-                    }
+                    if (!isMaxPageSize)
+                        model.InformationSctructuring(page);
                     else
-                    {
-                        if (Form1.searchText != "" && Form1.isOnlyTodaysNews)
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
-                        else if (Form1.searchText == "" && Form1.isOnlyTodaysNews)
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, DateTime.UtcNow.Date, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
-                        else if (!Form1.isOnlyTodaysNews && Form1.searchText != "")
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, Form1.searchText, Form1.Sources, PAGE_SIZE, page);
-                        else
-                            model.ResponseOnPage(Form1.SortSetting, Form1.LanguageSetting, NEWS_WORD, Form1.Sources, PAGE_SIZE, page);
-                    }
+                        model.PageInformationSctructuring(page, PAGE_SIZE);
                 }
 
-                Form1.isParamChanged = false;
-            }
-            else
-            {
-                if (!isMaxPageSize)
-                    model.InformationSctructuring(page);
+                if (model.isStatusOk)
+                {
+                    Authors = model.Authors;
+                    Description = model.Description;
+                    Title = model.Title;
+                    NameOfSource = model.NameOfSource;
+                    URL = model.URL;
+                    UrlImage = model.UrlImage;
+                    TotalResult = model.TotalResult;
+                    PublishedAt = model.PublishedAt;
+                }
                 else
-                    model.PageInformationSctructuring(page);
+                    Authors = "Server error :(";
             }
-
-            if (model.isStatusOk)
+            catch (Exception ex)
             {
-                Authors = model.Authors;
-                Description = model.Description;
-                Title = model.Title;
-                NameOfSource = model.NameOfSource;
-                URL = model.URL;
-                UrlImage = model.UrlImage;
-                TotalResult = model.TotalResult;
+                Authors = "Application error :(";
+                Description = ex.Message;
             }
-            else
-                Authors = "Server error :(";
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -210,6 +220,7 @@ namespace MandarinNews
             UrlRTB.Text = URL;
             ImageBox1.ImageLocation = UrlImage;
             ResultLbl.Text = TotalResult;
+            PublishAtRTB.Text = PublishedAt;
         }
 
         private void UC_AllNews_BackColorChanged(object sender, EventArgs e)
