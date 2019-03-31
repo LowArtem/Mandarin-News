@@ -48,8 +48,8 @@
             this.homeBtn = new System.Windows.Forms.Button();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.FillPanel = new System.Windows.Forms.Panel();
-            this.AntiFocus = new System.Windows.Forms.Button();
             this.dragControl1 = new MandarinNews.DragControl();
+            this.AntiFocus = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.LeftPanel.SuspendLayout();
@@ -121,11 +121,11 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(111, 3);
+            this.label1.Location = new System.Drawing.Point(81, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 44);
+            this.label1.Size = new System.Drawing.Size(297, 44);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Best News";
+            this.label1.Text = "Mandarin News";
             // 
             // pictureBox2
             // 
@@ -289,6 +289,10 @@
             this.FillPanel.Size = new System.Drawing.Size(1293, 720);
             this.FillPanel.TabIndex = 10;
             // 
+            // dragControl1
+            // 
+            this.dragControl1.SelectControl = this.HeaderPanel;
+            // 
             // AntiFocus
             // 
             this.AntiFocus.Location = new System.Drawing.Point(1206, 20);
@@ -297,10 +301,6 @@
             this.AntiFocus.TabIndex = 0;
             this.AntiFocus.Text = "button1";
             this.AntiFocus.UseVisualStyleBackColor = true;
-            // 
-            // dragControl1
-            // 
-            this.dragControl1.SelectControl = this.HeaderPanel;
             // 
             // Form1
             // 
