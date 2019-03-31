@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using CefSharp.WinForms;
 
 namespace MandarinNews
 {
@@ -24,6 +25,7 @@ namespace MandarinNews
         private bool isMaxPageSize = false;
         private int TotalMaxDifference = 0;
 
+        public ChromiumWebBrowser Browser;
 
         public UC_AllNews()
         {
@@ -32,6 +34,8 @@ namespace MandarinNews
             ChangeColor();
 
             model = new Model.Model();
+
+            InitializeChromium("https://google.com");
 
             NEWS_WORD = "news";
 
@@ -57,6 +61,8 @@ namespace MandarinNews
 
         private void RefreshBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             Form1.isParamChanged = true;
 
             page = 1;
@@ -67,14 +73,15 @@ namespace MandarinNews
 
         private void NextBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             if (model != null)
             {
                 if (Convert.ToInt32(model.TotalResult) > page)
                 {
                     if (page <= PAGE_SIZE)
                         page++;
-
-                    if (page > PAGE_SIZE && page < Convert.ToInt32(model.TotalResult))
+                    else if (page > PAGE_SIZE && page < Convert.ToInt32(model.TotalResult))
                     {
                         isMaxPageSize = true;
                         TotalMaxDifference = Convert.ToInt32(model.TotalResult) - page;
@@ -98,8 +105,16 @@ namespace MandarinNews
 
         private void PreviousBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             if (page > 1)
                 page--;
+
+            if (page > PAGE_SIZE && page < Convert.ToInt32(model.TotalResult))
+                isMaxPageSize = true;
+            else
+                isMaxPageSize = false;
+            
 
             NewsCountLbl.Text = page.ToString();
 
@@ -248,7 +263,12 @@ namespace MandarinNews
         private void UrlRTB_MouseClick(object sender, MouseEventArgs e)
         {
             var url = UrlRTB.Text;
-            System.Diagnostics.Process.Start(url);
+
+            WebPanel.Visible = true;
+
+            InitializeChromium(url);            
+           
+            //System.Diagnostics.Process.Start(url);
         }
 
         private void ChangeColor()
@@ -345,6 +365,27 @@ namespace MandarinNews
                 label5.Text = "Заголовок:";
                 label6.Text = "Описание:";*/
             }
+        }
+
+        //
+        // WebPanel element
+        //
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            AntiFocus.Focus();
+            WebPanel.Visible = false;
+            Browser.Dispose();
+        }
+
+        public void InitializeChromium(string url)
+        {
+            Browser = new ChromiumWebBrowser(url);
+
+            BrowserPanel.Controls.Add(Browser);
+
+            Browser.Dock = DockStyle.Fill;
+            Browser.Visible = true;
+            Browser.BringToFront();
         }
     }
 }

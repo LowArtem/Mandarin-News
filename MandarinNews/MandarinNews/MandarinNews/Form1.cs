@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using CefSharp.WinForms;
+using CefSharp;
 
 namespace MandarinNews
 {
@@ -37,6 +39,10 @@ namespace MandarinNews
             InitializeComponent();
 
             path = Path.Combine(folderPath, filePath);
+
+            CefSettings settings = new CefSettings();
+
+            Cef.Initialize(settings);
 
 
             LanguageSetting = Languages.RU;
@@ -252,6 +258,8 @@ namespace MandarinNews
         //
         private void button2_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             FileStream fs = new FileStream(path, FileMode.Truncate, FileAccess.Write);
             StreamWriter writer = new StreamWriter(fs, System.Text.Encoding.UTF8);
 
@@ -266,11 +274,15 @@ namespace MandarinNews
             writer.Close();
             fs.Close();
 
+            Cef.Shutdown();
+
             Application.Exit();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             this.WindowState = FormWindowState.Minimized;
         }
 
@@ -332,6 +344,8 @@ namespace MandarinNews
 
         private void homeBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             HomePanel.Visible = true;
             SettingsPanel.Visible = false;
             WorldPanel.Visible = false;
@@ -350,6 +364,8 @@ namespace MandarinNews
 
         private void settingsBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             HomePanel.Visible = false;
             SettingsPanel.Visible = true;
             WorldPanel.Visible = false;
@@ -368,6 +384,8 @@ namespace MandarinNews
 
         private void AllNewsBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             HomePanel.Visible = false;
             SettingsPanel.Visible = false;
             WorldPanel.Visible = true;
@@ -386,6 +404,8 @@ namespace MandarinNews
 
         private void SignInBtn_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             HomePanel.Visible = false;
             SettingsPanel.Visible = false;
             WorldPanel.Visible = false;
@@ -405,6 +425,8 @@ namespace MandarinNews
 
         private void button5_Click(object sender, EventArgs e)
         {
+            AntiFocus.Focus();
+
             if (textBox1.Text == "Search...")
                 textBox1.Text = "";
 

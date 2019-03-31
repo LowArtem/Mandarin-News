@@ -36,6 +36,7 @@
             this.PreviousBtn = new System.Windows.Forms.Button();
             this.NextBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.DescriptionPanel = new System.Windows.Forms.Panel();
             this.DescriptionRTB = new System.Windows.Forms.RichTextBox();
             this.TitleRTB = new System.Windows.Forms.RichTextBox();
             this.UrlRTB = new System.Windows.Forms.RichTextBox();
@@ -45,9 +46,14 @@
             this.ImageBox1 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.RefreshBtn = new System.Windows.Forms.Button();
-            this.Line = new System.Windows.Forms.Panel();
+            this.WebPanel = new System.Windows.Forms.Panel();
+            this.BrowserPanel = new System.Windows.Forms.Panel();
+            this.BackBtn = new System.Windows.Forms.Button();
+            this.AntiFocus = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.DescriptionPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox1)).BeginInit();
+            this.WebPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ResultLbl
@@ -130,8 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.Line);
-            this.panel1.Controls.Add(this.DescriptionRTB);
+            this.panel1.Controls.Add(this.DescriptionPanel);
             this.panel1.Controls.Add(this.TitleRTB);
             this.panel1.Controls.Add(this.UrlRTB);
             this.panel1.Controls.Add(this.AuthorRTB);
@@ -143,18 +148,25 @@
             this.panel1.Size = new System.Drawing.Size(1049, 687);
             this.panel1.TabIndex = 24;
             // 
+            // DescriptionPanel
+            // 
+            this.DescriptionPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DescriptionPanel.Controls.Add(this.DescriptionRTB);
+            this.DescriptionPanel.Location = new System.Drawing.Point(-1, 379);
+            this.DescriptionPanel.Name = "DescriptionPanel";
+            this.DescriptionPanel.Size = new System.Drawing.Size(1049, 307);
+            this.DescriptionPanel.TabIndex = 13;
+            // 
             // DescriptionRTB
             // 
-            this.DescriptionRTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DescriptionRTB.BackColor = System.Drawing.Color.White;
             this.DescriptionRTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DescriptionRTB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DescriptionRTB.Location = new System.Drawing.Point(4, 396);
+            this.DescriptionRTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DescriptionRTB.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.DescriptionRTB.Location = new System.Drawing.Point(0, 0);
             this.DescriptionRTB.Name = "DescriptionRTB";
             this.DescriptionRTB.ReadOnly = true;
-            this.DescriptionRTB.Size = new System.Drawing.Size(1038, 283);
+            this.DescriptionRTB.Size = new System.Drawing.Size(1047, 305);
             this.DescriptionRTB.TabIndex = 12;
             this.DescriptionRTB.Text = "";
             // 
@@ -258,18 +270,55 @@
             this.RefreshBtn.UseVisualStyleBackColor = true;
             this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
             // 
-            // Line
+            // WebPanel
             // 
-            this.Line.BackColor = System.Drawing.Color.Black;
-            this.Line.Location = new System.Drawing.Point(4, 390);
-            this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(1038, 4);
-            this.Line.TabIndex = 14;
+            this.WebPanel.BackColor = System.Drawing.Color.White;
+            this.WebPanel.Controls.Add(this.BrowserPanel);
+            this.WebPanel.Controls.Add(this.BackBtn);
+            this.WebPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WebPanel.Location = new System.Drawing.Point(0, 0);
+            this.WebPanel.Name = "WebPanel";
+            this.WebPanel.Size = new System.Drawing.Size(1293, 720);
+            this.WebPanel.TabIndex = 32;
+            this.WebPanel.Visible = false;
+            // 
+            // BrowserPanel
+            // 
+            this.BrowserPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BrowserPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.BrowserPanel.Location = new System.Drawing.Point(118, 0);
+            this.BrowserPanel.Name = "BrowserPanel";
+            this.BrowserPanel.Size = new System.Drawing.Size(1175, 720);
+            this.BrowserPanel.TabIndex = 20;
+            // 
+            // BackBtn
+            // 
+            this.BackBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BackBtn.BackgroundImage")));
+            this.BackBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BackBtn.FlatAppearance.BorderSize = 0;
+            this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BackBtn.Location = new System.Drawing.Point(18, 297);
+            this.BackBtn.Name = "BackBtn";
+            this.BackBtn.Size = new System.Drawing.Size(87, 79);
+            this.BackBtn.TabIndex = 19;
+            this.BackBtn.UseVisualStyleBackColor = true;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
+            // 
+            // AntiFocus
+            // 
+            this.AntiFocus.Location = new System.Drawing.Point(18, 163);
+            this.AntiFocus.Name = "AntiFocus";
+            this.AntiFocus.Size = new System.Drawing.Size(0, 0);
+            this.AntiFocus.TabIndex = 33;
+            this.AntiFocus.Text = "button1";
+            this.AntiFocus.UseVisualStyleBackColor = true;
             // 
             // UC_Home
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.AntiFocus);
+            this.Controls.Add(this.WebPanel);
             this.Controls.Add(this.ResultLbl);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -284,7 +333,9 @@
             this.Size = new System.Drawing.Size(1293, 720);
             this.BackColorChanged += new System.EventHandler(this.UC_Home_BackColorChanged);
             this.panel1.ResumeLayout(false);
+            this.DescriptionPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox1)).EndInit();
+            this.WebPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,6 +359,10 @@
         private System.Windows.Forms.PictureBox ImageBox1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button RefreshBtn;
-        private System.Windows.Forms.Panel Line;
+        private System.Windows.Forms.Panel DescriptionPanel;
+        private System.Windows.Forms.Panel WebPanel;
+        private System.Windows.Forms.Panel BrowserPanel;
+        private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Button AntiFocus;
     }
 }

@@ -49,9 +49,11 @@
             this.settingsBtn = new System.Windows.Forms.Button();
             this.FillPanel = new System.Windows.Forms.Panel();
             this.dragControl1 = new MandarinNews.DragControl();
+            this.AntiFocus = new System.Windows.Forms.Button();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.LeftPanel.SuspendLayout();
+            this.FillPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -280,6 +282,7 @@
             // FillPanel
             // 
             this.FillPanel.BackColor = System.Drawing.Color.White;
+            this.FillPanel.Controls.Add(this.AntiFocus);
             this.FillPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FillPanel.Location = new System.Drawing.Point(79, 53);
             this.FillPanel.Name = "FillPanel";
@@ -289,6 +292,15 @@
             // dragControl1
             // 
             this.dragControl1.SelectControl = this.HeaderPanel;
+            // 
+            // AntiFocus
+            // 
+            this.AntiFocus.Location = new System.Drawing.Point(1206, 20);
+            this.AntiFocus.Name = "AntiFocus";
+            this.AntiFocus.Size = new System.Drawing.Size(0, 0);
+            this.AntiFocus.TabIndex = 0;
+            this.AntiFocus.Text = "button1";
+            this.AntiFocus.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -309,6 +321,7 @@
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.LeftPanel.ResumeLayout(false);
+            this.FillPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -334,6 +347,7 @@
         private System.Windows.Forms.Panel WorldPanel;
         private System.Windows.Forms.Panel HomePanel;
         private System.Windows.Forms.Label PageLbl;
+        private System.Windows.Forms.Button AntiFocus;
     }
 }
 
