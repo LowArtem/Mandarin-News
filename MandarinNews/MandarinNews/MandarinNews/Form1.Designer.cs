@@ -48,8 +48,8 @@
             this.homeBtn = new System.Windows.Forms.Button();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.FillPanel = new System.Windows.Forms.Panel();
-            this.dragControl1 = new MandarinNews.DragControl();
             this.AntiFocus = new System.Windows.Forms.Button();
+            this.dragControl1 = new MandarinNews.DragControl();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.LeftPanel.SuspendLayout();
@@ -123,9 +123,9 @@
             this.label1.ForeColor = System.Drawing.Color.Orange;
             this.label1.Location = new System.Drawing.Point(81, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 44);
+            this.label1.Size = new System.Drawing.Size(289, 44);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Mandarin News";
+            this.label1.Text = "Мир новостей";
             // 
             // pictureBox2
             // 
@@ -289,10 +289,6 @@
             this.FillPanel.Size = new System.Drawing.Size(1293, 720);
             this.FillPanel.TabIndex = 10;
             // 
-            // dragControl1
-            // 
-            this.dragControl1.SelectControl = this.HeaderPanel;
-            // 
             // AntiFocus
             // 
             this.AntiFocus.Location = new System.Drawing.Point(1206, 20);
@@ -301,6 +297,10 @@
             this.AntiFocus.TabIndex = 0;
             this.AntiFocus.Text = "button1";
             this.AntiFocus.UseVisualStyleBackColor = true;
+            // 
+            // dragControl1
+            // 
+            this.dragControl1.SelectControl = this.HeaderPanel;
             // 
             // Form1
             // 
@@ -316,7 +316,7 @@
             this.Name = "Form1";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mandarin News";
+            this.Text = "Мир новостей";
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
