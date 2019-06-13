@@ -190,8 +190,11 @@ namespace MandarinNews
             Form1.isParamChanged = true;
         }
 
-        private void ChangeColor()
+        public void ChangeColor()
         {
+            bottomPanel.BackColor = Form1.ThemeSetting;
+            rightPanel.BackColor = Form1.ThemeSetting;
+
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
             {
                 checkBox1.BackColor = this.BackColor;
@@ -246,6 +249,9 @@ namespace MandarinNews
                 ModeCB.ForeColor = Color.White;
 
                 label1.ForeColor = Color.White;
+
+                bottomPanel.BackColor = Form1.ThemeSetting;
+                rightPanel.BackColor = Form1.ThemeSetting;
             }
             else
             {
@@ -301,6 +307,9 @@ namespace MandarinNews
                 ModeCB.ForeColor = Color.Black;
 
                 label1.ForeColor = Color.Black;
+
+                bottomPanel.BackColor = Form1.ThemeSetting;
+                rightPanel.BackColor = Form1.ThemeSetting;
             }
         }
 

@@ -8,7 +8,7 @@ namespace MandarinNews.Model
 {
     class Model
     {
-        private const string API_KEY = "87d7a28d9d46429ab88dfb9785ca55a7";
+        private const string API_KEY = "87d7a28d9d46429ab88dfb9785ca55a7"; // не забыть спрятать
 
         private NewsApiClient Client;
         private ArticlesResult articlesResponse;

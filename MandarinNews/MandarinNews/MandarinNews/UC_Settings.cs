@@ -323,8 +323,11 @@ namespace MandarinNews
             ChangeColor();
         }
 
-        private void ChangeColor()
+        public void ChangeColor()
         {
+            bottomPanel.BackColor = Form1.ThemeSetting;
+            rightPanel.BackColor = Form1.ThemeSetting;
+
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
             {
                 label2.ForeColor = Color.White;
@@ -350,6 +353,9 @@ namespace MandarinNews
 
                 DateCheckBox.BackColor = this.BackColor;
                 DateCheckBox.ForeColor = Color.White;
+
+                bottomPanel.BackColor = Form1.ThemeSetting;
+                rightPanel.BackColor = Form1.ThemeSetting;
             }
             else
             {
@@ -376,6 +382,9 @@ namespace MandarinNews
 
                 DateCheckBox.BackColor = Color.WhiteSmoke;
                 DateCheckBox.ForeColor = Color.Black;
+
+                bottomPanel.BackColor = Form1.ThemeSetting;
+                rightPanel.BackColor = Form1.ThemeSetting;
             }
         }
 

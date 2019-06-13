@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Diagnostics;
 using System.Windows.Forms;
 using CefSharp.WinForms;
 
@@ -16,6 +17,7 @@ namespace MandarinNews
         private string UrlImage;
         private string TotalResult;
         private string PublishedAt;
+        private string parser;
 
 
         private const int PAGE_SIZE = 80;
@@ -34,7 +36,6 @@ namespace MandarinNews
 
             CefSettings settings = new CefSettings();
 
-            //Cef.Initialize(settings);
 
             InitializeChromium("https://google.com");
 
@@ -150,6 +151,22 @@ namespace MandarinNews
                     TotalResult = "";
                     PublishedAt = "";
                 }
+
+                string lang = ParserLanguage();
+
+                if (lang != "error")
+                {
+                    Model.Parser.ParserSettings(URL, lang);
+
+                    string start_parser_error = Model.Parser.StartParser();
+                    
+                    parser = Model.Parser.ParserResult();
+
+                    if (start_parser_error != "0")
+                        parser = start_parser_error;
+                }
+                else
+                    parser = "Parser language error :(";
             }
             catch (Exception ex)
             {
@@ -175,6 +192,9 @@ namespace MandarinNews
             ImageBox1.ImageLocation = UrlImage;
             ResultLbl.Text = TotalResult;
             PublishAtRTB.Text = PublishedAt;
+
+            if (parser != "" && parser != " " && parser != null)
+                DescriptionRTB.Text = parser;
         }
 
         private void UC_Home_BackColorChanged(object sender, EventArgs e)
@@ -196,6 +216,8 @@ namespace MandarinNews
         public void ChangeColor()
         {
             panel1.BackColor = this.BackColor;
+            bottomPanel.BackColor = Form1.ThemeSetting;
+            rightPanel.BackColor = Form1.ThemeSetting;
 
             if (Form1.ThemeSetting == Color.Black || Form1.ThemeSetting == Color.DarkBlue)
             {
@@ -228,6 +250,9 @@ namespace MandarinNews
 
                 UrlRTB.BackColor = this.BackColor;
                 UrlRTB.ForeColor = Color.White;
+
+                bottomPanel.BackColor = Form1.ThemeSetting;
+                rightPanel.BackColor = Form1.ThemeSetting;
             }
             else
             {
@@ -260,6 +285,9 @@ namespace MandarinNews
 
                 UrlRTB.BackColor = this.BackColor;
                 UrlRTB.ForeColor = Color.Black;
+
+                bottomPanel.BackColor = Form1.ThemeSetting;
+                rightPanel.BackColor = Form1.ThemeSetting;
             }
         }
 
@@ -309,6 +337,24 @@ namespace MandarinNews
             Browser.Dock = DockStyle.Fill;
             Browser.Visible = true;
             Browser.BringToFront();
+        }
+
+        private string ParserLanguage()
+        {
+            if (Form1.LanguageSetting == NewsAPI.Constants.Languages.RU)
+                return "Russian";
+            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.EN)
+                return "English";
+            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.DE)
+                return "German";
+            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.IT)
+                return "Italian";
+            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.FR)
+                return "French";
+            else if (Form1.LanguageSetting == NewsAPI.Constants.Languages.UK)
+                return "Ukrainian";
+            else
+                return "error";
         }
     }
 }

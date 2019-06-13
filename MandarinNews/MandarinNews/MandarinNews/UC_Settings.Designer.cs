@@ -39,6 +39,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.InterfaceLanguageCB = new System.Windows.Forms.ComboBox();
             this.DateCheckBox = new System.Windows.Forms.CheckBox();
+            this.rightPanel = new System.Windows.Forms.Panel();
+            this.bottomPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // CountryCB
@@ -193,7 +195,7 @@
             this.DateCheckBox.FlatAppearance.BorderSize = 0;
             this.DateCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DateCheckBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateCheckBox.Location = new System.Drawing.Point(43, 583);
+            this.DateCheckBox.Location = new System.Drawing.Point(43, 593);
             this.DateCheckBox.Name = "DateCheckBox";
             this.DateCheckBox.Size = new System.Drawing.Size(242, 26);
             this.DateCheckBox.TabIndex = 18;
@@ -201,10 +203,28 @@
             this.DateCheckBox.UseVisualStyleBackColor = true;
             this.DateCheckBox.CheckedChanged += new System.EventHandler(this.DateCheckBox_CheckedChanged);
             // 
+            // rightPanel
+            // 
+            this.rightPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rightPanel.Location = new System.Drawing.Point(1319, 0);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(10, 726);
+            this.rightPanel.TabIndex = 20;
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 725);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(1329, 10);
+            this.bottomPanel.TabIndex = 19;
+            // 
             // UC_Settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.rightPanel);
+            this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.DateCheckBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.InterfaceLanguageCB);
@@ -218,7 +238,7 @@
             this.Controls.Add(this.CountryCB);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "UC_Settings";
-            this.Size = new System.Drawing.Size(1293, 720);
+            this.Size = new System.Drawing.Size(1329, 735);
             this.BackColorChanged += new System.EventHandler(this.UC_Settings_BackColorChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -237,5 +257,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox InterfaceLanguageCB;
         private System.Windows.Forms.CheckBox DateCheckBox;
+        private System.Windows.Forms.Panel rightPanel;
+        private System.Windows.Forms.Panel bottomPanel;
     }
 }

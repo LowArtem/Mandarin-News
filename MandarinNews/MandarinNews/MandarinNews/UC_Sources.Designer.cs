@@ -46,6 +46,8 @@
             this.checkBox16 = new System.Windows.Forms.CheckBox();
             this.ModeCB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.rightPanel = new System.Windows.Forms.Panel();
+            this.bottomPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // checkBox1
@@ -315,10 +317,28 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Select youre mode";
             // 
+            // rightPanel
+            // 
+            this.rightPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rightPanel.Location = new System.Drawing.Point(1319, 0);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(10, 726);
+            this.rightPanel.TabIndex = 37;
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 725);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(1329, 10);
+            this.bottomPanel.TabIndex = 36;
+            // 
             // UC_Sources
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.rightPanel);
+            this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ModeCB);
             this.Controls.Add(this.checkBox16);
@@ -339,7 +359,7 @@
             this.Controls.Add(this.checkBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "UC_Sources";
-            this.Size = new System.Drawing.Size(1293, 720);
+            this.Size = new System.Drawing.Size(1329, 735);
             this.BackColorChanged += new System.EventHandler(this.UC_Sources_BackColorChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -366,5 +386,7 @@
         private System.Windows.Forms.CheckBox checkBox16;
         private System.Windows.Forms.ComboBox ModeCB;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel rightPanel;
+        private System.Windows.Forms.Panel bottomPanel;
     }
 }
