@@ -13,9 +13,9 @@ namespace MandarinNews
     {
         public static Languages LanguageSetting { get; set; }
         public static SortBys SortSetting { get; set; }
-        public static Countries CountrySetting { get; set; }
         public static Categories CategorySetting { get; set; }
         public static Color ThemeSetting { get; set; }
+        public static Countries CountrySetting { get; set; }
         public static string InterfaceLanguage { get; set; }
         public static bool isOnlyTodaysNews { get; set; }
 
@@ -109,6 +109,8 @@ namespace MandarinNews
             settingsBtn.BackColor = ThemeSetting;
             SignInBtn.BackColor = ThemeSetting;
             button5.BackColor = ThemeSetting;
+            bottomPanel.BackColor = ThemeSetting;
+            rightPanel.BackColor = ThemeSetting;
 
             if (ThemeSetting == Color.Black || ThemeSetting == Color.DarkBlue)
             {
@@ -454,6 +456,15 @@ namespace MandarinNews
 
             SetTheme();
             SetLanguage();
+        }
+
+        private void HeaderPanel_BackColorChanged(object sender, EventArgs e)
+        {
+            SetTheme();
+            uc_allNews.ChangeColor();
+            uc_home.ChangeColor();
+            uc_settings.ChangeColor();
+            uc_sources.ChangeColor();                       
         }
     }
 }

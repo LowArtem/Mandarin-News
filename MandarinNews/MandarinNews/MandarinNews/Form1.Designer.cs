@@ -48,6 +48,8 @@
             this.homeBtn = new System.Windows.Forms.Button();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.FillPanel = new System.Windows.Forms.Panel();
+            this.rightPanel = new System.Windows.Forms.Panel();
+            this.bottomPanel = new System.Windows.Forms.Panel();
             this.AntiFocus = new System.Windows.Forms.Button();
             this.dragControl1 = new MandarinNews.DragControl();
             this.HeaderPanel.SuspendLayout();
@@ -69,8 +71,9 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1372, 53);
+            this.HeaderPanel.Size = new System.Drawing.Size(1408, 53);
             this.HeaderPanel.TabIndex = 8;
+            this.HeaderPanel.BackColorChanged += new System.EventHandler(this.HeaderPanel_BackColorChanged);
             // 
             // PageLbl
             // 
@@ -144,7 +147,7 @@
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1222, 0);
+            this.button3.Location = new System.Drawing.Point(1258, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 53);
             this.button3.TabIndex = 10;
@@ -158,7 +161,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1297, 0);
+            this.button2.Location = new System.Drawing.Point(1333, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 53);
             this.button2.TabIndex = 9;
@@ -180,7 +183,7 @@
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 53);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(79, 720);
+            this.LeftPanel.Size = new System.Drawing.Size(79, 735);
             this.LeftPanel.TabIndex = 9;
             // 
             // AccountPanel
@@ -282,12 +285,30 @@
             // FillPanel
             // 
             this.FillPanel.BackColor = System.Drawing.Color.White;
+            this.FillPanel.Controls.Add(this.rightPanel);
+            this.FillPanel.Controls.Add(this.bottomPanel);
             this.FillPanel.Controls.Add(this.AntiFocus);
             this.FillPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FillPanel.Location = new System.Drawing.Point(79, 53);
             this.FillPanel.Name = "FillPanel";
-            this.FillPanel.Size = new System.Drawing.Size(1293, 720);
+            this.FillPanel.Size = new System.Drawing.Size(1329, 735);
             this.FillPanel.TabIndex = 10;
+            // 
+            // rightPanel
+            // 
+            this.rightPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rightPanel.Location = new System.Drawing.Point(1319, 0);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(10, 726);
+            this.rightPanel.TabIndex = 2;
+            // 
+            // bottomPanel
+            // 
+            this.bottomPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 725);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(1329, 10);
+            this.bottomPanel.TabIndex = 1;
             // 
             // AntiFocus
             // 
@@ -306,7 +327,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1372, 773);
+            this.ClientSize = new System.Drawing.Size(1408, 788);
             this.Controls.Add(this.FillPanel);
             this.Controls.Add(this.LeftPanel);
             this.Controls.Add(this.HeaderPanel);
@@ -348,6 +369,8 @@
         private System.Windows.Forms.Panel HomePanel;
         private System.Windows.Forms.Label PageLbl;
         private System.Windows.Forms.Button AntiFocus;
+        private System.Windows.Forms.Panel rightPanel;
+        private System.Windows.Forms.Panel bottomPanel;
     }
 }
 
