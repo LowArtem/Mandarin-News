@@ -13,8 +13,10 @@ namespace MandarinNews.Model
         /// <param name="language">site language</param>
         public static void ParserSettings(string url, string language)
         {
-            File.WriteAllText("C:\\Users\\user\\Desktop\\PythonBot\\files\\url.txt", url);
-            File.WriteAllText("C:\\Users\\user\\Desktop\\PythonBot\\files\\language.txt", language);
+            string path = GetPath("parser_files\\url.txt");
+            File.WriteAllText(path, url);
+            path = GetPath("parser_files\\language.txt");
+            File.WriteAllText(path, language);
         }
 
         /// <summary>
@@ -24,7 +26,7 @@ namespace MandarinNews.Model
         /// <returns></returns>
         public static string StartParser()
         {
-            string parser_path = "C:\\Users\\user\\Desktop\\PythonBot\\__Parser exe file\\Parser.exe";
+            string parser_path = GetPath("Parser.exe");
 
             try
             {
@@ -51,7 +53,7 @@ namespace MandarinNews.Model
         /// <returns>string with clear site`s data</returns>
         public static string ParserResult()
         {
-            string path = "C:\\Users\\user\\Desktop\\PythonBot\\files\\file.txt";
+            string path = GetPath("parser_files\\file.txt");
             string result = "";
 
             try
@@ -79,6 +81,11 @@ namespace MandarinNews.Model
             }
 
             return result;
+        }
+        
+        private static string GetPath(string filename)
+        {
+            return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\MandarinNews\\" + filename;
         }
     }
 }
