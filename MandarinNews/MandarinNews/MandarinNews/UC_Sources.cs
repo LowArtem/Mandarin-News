@@ -11,6 +11,8 @@ namespace MandarinNews
         public UC_Sources()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+            this.AutoScaleMode = AutoScaleMode.Inherit;
 
             ChangeColor();
 

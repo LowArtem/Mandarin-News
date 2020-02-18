@@ -1,27 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Diagnostics;
 using System.Windows.Forms;
+using CefSharp;
 using CefSharp.WinForms;
 
 namespace MandarinNews
 {
     public partial class UC_Home : UserControl
     {
-        private string Authors;
-        private string Description;
-        private string Title;
-        private string NameOfSource;
-        private string URL;
-        private string UrlImage;
-        private string TotalResult;
-        private string PublishedAt;
-        private string parser;
+        private string Authors = "";
+        private string Description = "";
+        private string Title = "";
+        private string NameOfSource = "";
+        private string URL = "";
+        private string UrlImage = "";
+        private string TotalResult = "";
+        private string PublishedAt = "";
+        private string parser = "";
 
 
         private const int PAGE_SIZE = 80;
         private int page;
+
+        private int region_index = 0;
+        public static bool isRegionNewsFilesDownloaded = false;
+        private List<Model.VolgogradParsed> news;
+
         private Model.Model model;
 
         public ChromiumWebBrowser Browser;
@@ -29,6 +35,8 @@ namespace MandarinNews
         public UC_Home()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+            this.AutoScaleMode = AutoScaleMode.Inherit;
 
             ChangeColor();
 
@@ -40,10 +48,16 @@ namespace MandarinNews
             InitializeChromium("https://google.com");
 
             page = 1;
+            region_index = 0;
             NewsCountLbl.Text = page.ToString();
 
-            if (!backgroundWorker1.IsBusy)
-                backgroundWorker1.RunWorkerAsync();
+            if (Form1.RegionSetting == "All")
+            {
+                if (!backgroundWorker1.IsBusy)
+                    backgroundWorker1.RunWorkerAsync();
+            }
+            else
+                RegionNewsWorker();
         }
 
         private void RefreshBtn_Click(object sender, EventArgs e)
@@ -53,46 +67,78 @@ namespace MandarinNews
             Form1.isParamChanged = true;
 
             page = 1;
+            region_index = 0;
             NewsCountLbl.Text = page.ToString();
-            if (!backgroundWorker1.IsBusy)
-                backgroundWorker1.RunWorkerAsync();
+            if (Form1.RegionSetting == "All")
+            {
+                if (!backgroundWorker1.IsBusy)
+                    backgroundWorker1.RunWorkerAsync();
+            }
+            else
+                RegionNewsWorker();
         }
 
         private void NextBtn_Click(object sender, EventArgs e)
         {
             AntiFocus.Focus();
 
-            if (model != null)
+            if (Form1.RegionSetting == "All")
             {
-                if (Convert.ToInt32(model.TotalResult) > page)
+                if (model != null)
+                {
+                    if (Convert.ToInt32(model.TotalResult) > page)
+                    {
+                        if (page < PAGE_SIZE)
+                            page++;
+                    }
+                }
+                else
                 {
                     if (page < PAGE_SIZE)
                         page++;
                 }
+
+                NewsCountLbl.Text = page.ToString();
+
+                if (!backgroundWorker1.IsBusy)
+                    backgroundWorker1.RunWorkerAsync();
             }
             else
             {
-                if (page < PAGE_SIZE)
-                    page++;
+                if (region_index < 33)
+                {
+                    region_index += 1;
+
+                    NewsCountLbl.Text = (region_index + 1).ToString();
+                    RegionNewsWorker(region_index);
+                }
             }
-
-            NewsCountLbl.Text = page.ToString();
-
-            if (!backgroundWorker1.IsBusy)
-                backgroundWorker1.RunWorkerAsync();
         }
 
         private void PreviousBtn_Click(object sender, EventArgs e)
         {
-            AntiFocus.Focus();
+            if (Form1.RegionSetting == "All")
+            {
+                AntiFocus.Focus();
 
-            if (page > 1)
-                page--;
+                if (page > 1)
+                    page--;
 
-            NewsCountLbl.Text = page.ToString();
+                NewsCountLbl.Text = page.ToString();
 
-            if (!backgroundWorker1.IsBusy)
-                backgroundWorker1.RunWorkerAsync();
+                if (!backgroundWorker1.IsBusy)
+                    backgroundWorker1.RunWorkerAsync();
+            }
+            else
+            {
+                if (region_index > 0)
+                {
+                    region_index -= 1;
+
+                    NewsCountLbl.Text = (region_index + 1).ToString();
+                    RegionNewsWorker(region_index);
+                }
+            }
         }
 
         //
@@ -120,7 +166,7 @@ namespace MandarinNews
                         model.ResponseHeadlines(Form1.LanguageSetting, Form1.CountrySetting, PAGE_SIZE, page);
                     else
                         model.ResponseHeadlines(Form1.LanguageSetting, PAGE_SIZE, page);
-                                        
+
 
                     Form1.isParamChanged = false;
                 }
@@ -159,7 +205,8 @@ namespace MandarinNews
                     Model.Parser.ParserSettings(URL, lang);
 
                     string start_parser_error = Model.Parser.StartParser();
-                    
+                    //string start_parser_error = "";
+
                     parser = Model.Parser.ParserResult();
 
                     if (start_parser_error != "0")
@@ -193,8 +240,27 @@ namespace MandarinNews
             ResultLbl.Text = TotalResult;
             PublishAtRTB.Text = PublishedAt;
 
-            if (parser != "" && parser != " " && parser != null)
-                DescriptionRTB.Text = parser;
+            try
+            {
+                if (Form1.RegionSetting == "All")
+                {
+                    if (parser != "" && parser != " " && parser != null)
+                        DescriptionRTB.Text = parser;
+                }
+                else
+                    throw new NotImplementedException("All regions method has called with 1 region setting");
+            }
+            catch(NotImplementedException ex)
+            {
+                AuthorRTB.Text = "";
+                DescriptionRTB.Text = ex.Message + "\nAll regions method has called with 1 region setting\nTry to reload this page.";
+                TitleRTB.Text = "Region Setting Error :(";
+                SourceRTB.Text = "";
+                UrlRTB.Text = "";
+                ImageBox1.ImageLocation = "";
+                ResultLbl.Text = "";
+                PublishAtRTB.Text = "";
+            }
         }
 
         private void UC_Home_BackColorChanged(object sender, EventArgs e)
@@ -355,6 +421,117 @@ namespace MandarinNews
                 return "Ukrainian";
             else
                 return "error";
+        }
+
+        /// <summary>
+        /// Show region news
+        /// </summary>
+        /// <param name="index">index of news (default value = 0)</param>
+        private async void RegionNewsWorker(int index = 0)
+        {
+            try
+            {
+                if (Form1.RegionSetting == "Moscow")
+                {
+                    if (!isRegionNewsFilesDownloaded)
+                    {
+                        try
+                        {
+                            news = await Model.VolgogradNewsParser.GetNewsText("Москва");
+                        }
+                        catch (Exception e)
+                        {
+                            isRegionNewsFilesDownloaded = false;
+                            Title = "Region news adding error :(\n" + e.Message;
+                        }
+                        isRegionNewsFilesDownloaded = true;
+                    }
+
+                    Authors = news[index].Website.Name;
+                    Description = news[index].Text;
+                    Title = news[index].Title;
+                    NameOfSource = news[index].Website.Name;
+                    URL = news[index].Url.ToString();
+                    try
+                    {
+                        UrlImage = news[index].Elements[0].Url.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        UrlImage = "";
+                    }
+                    TotalResult = "34";
+                    PublishedAt = news[index].DiscoverDate;
+                }
+                else if (Form1.RegionSetting == "Volgograd")
+                {
+                    if (!isRegionNewsFilesDownloaded)
+                    {
+                        try
+                        {
+                            news = await Model.VolgogradNewsParser.GetNewsText("Волгоград");
+                        }
+                        catch (Exception e)
+                        {
+                            isRegionNewsFilesDownloaded = false;
+                            Title = "Region news adding error :(\n" + e.Message;
+                        }
+                        isRegionNewsFilesDownloaded = true;
+                    }
+
+                    Authors = news[index].Website.Name;
+                    Description = news[index].Text;
+                    Title = news[index].Title;
+                    NameOfSource = news[index].Website.Name;
+                    URL = news[index].Url.ToString();
+                    try
+                    {
+                        UrlImage = news[index].Elements[0].Url.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        UrlImage = "";
+                    }
+                    TotalResult = "34";
+                    PublishedAt = news[index].DiscoverDate;
+                }
+                else
+                {
+                    throw new NotImplementedException("RegionNewsWorker has called with All Region setting");
+                }
+
+
+                AuthorRTB.Text = Authors;
+                DescriptionRTB.Text = Description;
+                TitleRTB.Text = Title;
+                SourceRTB.Text = NameOfSource;
+                UrlRTB.Text = URL;
+                ImageBox1.ImageLocation = UrlImage;
+                ResultLbl.Text = TotalResult;
+                PublishAtRTB.Text = PublishedAt;
+            }
+            catch (NotImplementedException ex)
+            {
+                AuthorRTB.Text = "";
+                DescriptionRTB.Text = ex.Message + "\n1 regions method has called with all region setting\nTry to reload this page.";
+                TitleRTB.Text = "Region Setting Error :(";
+                SourceRTB.Text = "";
+                UrlRTB.Text = "";
+                ImageBox1.ImageLocation = "";
+                ResultLbl.Text = "";
+                PublishAtRTB.Text = "";
+            }
+            catch(NullReferenceException ex)
+            {
+                AuthorRTB.Text = "";
+                DescriptionRTB.Text = ex.Message + "\nTry to reload this page.";
+                TitleRTB.Text = "Null Reference Exception :(";
+                SourceRTB.Text = "";
+                UrlRTB.Text = "";
+                ImageBox1.ImageLocation = "";
+                ResultLbl.Text = "";
+                PublishAtRTB.Text = "";
+            }
         }
     }
 }

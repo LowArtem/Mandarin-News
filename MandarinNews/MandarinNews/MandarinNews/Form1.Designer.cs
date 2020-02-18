@@ -52,10 +52,12 @@
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.AntiFocus = new System.Windows.Forms.Button();
             this.dragControl1 = new MandarinNews.DragControl();
+            this.SizeControlPanel = new System.Windows.Forms.Panel();
             this.HeaderPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.LeftPanel.SuspendLayout();
             this.FillPanel.SuspendLayout();
+            this.SizeControlPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -71,12 +73,13 @@
             this.HeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderPanel.Location = new System.Drawing.Point(0, 0);
             this.HeaderPanel.Name = "HeaderPanel";
-            this.HeaderPanel.Size = new System.Drawing.Size(1408, 53);
+            this.HeaderPanel.Size = new System.Drawing.Size(1406, 53);
             this.HeaderPanel.TabIndex = 8;
             this.HeaderPanel.BackColorChanged += new System.EventHandler(this.HeaderPanel_BackColorChanged);
             // 
             // PageLbl
             // 
+            this.PageLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PageLbl.AutoSize = true;
             this.PageLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PageLbl.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -89,6 +92,7 @@
             // 
             // button5
             // 
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button5.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -98,20 +102,21 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(677, 10);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(56, 36);
+            this.button5.Size = new System.Drawing.Size(54, 36);
             this.button5.TabIndex = 13;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.textBox1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(737, 14);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(302, 30);
+            this.textBox1.Size = new System.Drawing.Size(300, 30);
             this.textBox1.TabIndex = 11;
             this.textBox1.Text = "Search...";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
@@ -120,6 +125,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -142,12 +148,12 @@
             // 
             // button3
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1258, 0);
+            this.button3.Location = new System.Drawing.Point(1256, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 53);
             this.button3.TabIndex = 10;
@@ -157,11 +163,11 @@
             // 
             // button2
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1333, 0);
+            this.button2.Location = new System.Drawing.Point(1331, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 53);
             this.button2.TabIndex = 9;
@@ -183,7 +189,7 @@
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 53);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(79, 735);
+            this.LeftPanel.Size = new System.Drawing.Size(79, 733);
             this.LeftPanel.TabIndex = 9;
             // 
             // AccountPanel
@@ -291,21 +297,23 @@
             this.FillPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FillPanel.Location = new System.Drawing.Point(79, 53);
             this.FillPanel.Name = "FillPanel";
-            this.FillPanel.Size = new System.Drawing.Size(1329, 735);
+            this.FillPanel.Size = new System.Drawing.Size(1327, 733);
             this.FillPanel.TabIndex = 10;
             // 
             // rightPanel
             // 
+            this.rightPanel.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rightPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.rightPanel.Location = new System.Drawing.Point(1319, 0);
+            this.rightPanel.Location = new System.Drawing.Point(1317, -1);
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(10, 726);
             this.rightPanel.TabIndex = 2;
             // 
             // bottomPanel
             // 
+            this.bottomPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.bottomPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.bottomPanel.Location = new System.Drawing.Point(0, 725);
+            this.bottomPanel.Location = new System.Drawing.Point(-1, 723);
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(1329, 10);
             this.bottomPanel.TabIndex = 1;
@@ -323,14 +331,26 @@
             // 
             this.dragControl1.SelectControl = this.HeaderPanel;
             // 
+            // SizeControlPanel
+            // 
+            this.SizeControlPanel.BackColor = System.Drawing.Color.Gray;
+            this.SizeControlPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SizeControlPanel.Controls.Add(this.FillPanel);
+            this.SizeControlPanel.Controls.Add(this.LeftPanel);
+            this.SizeControlPanel.Controls.Add(this.HeaderPanel);
+            this.SizeControlPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SizeControlPanel.Location = new System.Drawing.Point(0, 0);
+            this.SizeControlPanel.Name = "SizeControlPanel";
+            this.SizeControlPanel.Size = new System.Drawing.Size(1408, 788);
+            this.SizeControlPanel.TabIndex = 3;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.ClientSize = new System.Drawing.Size(1408, 788);
-            this.Controls.Add(this.FillPanel);
-            this.Controls.Add(this.LeftPanel);
-            this.Controls.Add(this.HeaderPanel);
+            this.Controls.Add(this.SizeControlPanel);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -343,13 +363,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.LeftPanel.ResumeLayout(false);
             this.FillPanel.ResumeLayout(false);
+            this.SizeControlPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private DragControl dragControl1;
+        //private DragControl dragControl1;
         private System.Windows.Forms.Panel HeaderPanel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
@@ -371,6 +392,8 @@
         private System.Windows.Forms.Button AntiFocus;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel bottomPanel;
+        private DragControl dragControl1;
+        private System.Windows.Forms.Panel SizeControlPanel;
     }
 }
 

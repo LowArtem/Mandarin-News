@@ -41,6 +41,8 @@
             this.DateCheckBox = new System.Windows.Forms.CheckBox();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.bottomPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NewsRegionCB = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // CountryCB
@@ -66,6 +68,7 @@
             // 
             // SortCB
             // 
+            this.SortCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.SortCB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.SortCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SortCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -83,6 +86,7 @@
             // 
             // CategoryCB
             // 
+            this.CategoryCB.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.CategoryCB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CategoryCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CategoryCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,6 +117,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(39, 228);
@@ -123,6 +128,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(39, 437);
@@ -133,9 +139,10 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(690, 51);
+            this.label5.Location = new System.Drawing.Point(690, 52);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 22);
             this.label5.TabIndex = 15;
@@ -143,6 +150,7 @@
             // 
             // ThemeCB
             // 
+            this.ThemeCB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ThemeCB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ThemeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ThemeCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -157,7 +165,7 @@
             "Dark blue",
             "White",
             "Black"});
-            this.ThemeCB.Location = new System.Drawing.Point(920, 47);
+            this.ThemeCB.Location = new System.Drawing.Point(920, 48);
             this.ThemeCB.Name = "ThemeCB";
             this.ThemeCB.Size = new System.Drawing.Size(277, 30);
             this.ThemeCB.TabIndex = 14;
@@ -165,9 +173,10 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(690, 232);
+            this.label6.Location = new System.Drawing.Point(690, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(191, 22);
             this.label6.TabIndex = 17;
@@ -175,6 +184,7 @@
             // 
             // InterfaceLanguageCB
             // 
+            this.InterfaceLanguageCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.InterfaceLanguageCB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.InterfaceLanguageCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InterfaceLanguageCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -183,7 +193,7 @@
             this.InterfaceLanguageCB.Items.AddRange(new object[] {
             "English",
             "Русский"});
-            this.InterfaceLanguageCB.Location = new System.Drawing.Point(920, 228);
+            this.InterfaceLanguageCB.Location = new System.Drawing.Point(920, 225);
             this.InterfaceLanguageCB.Name = "InterfaceLanguageCB";
             this.InterfaceLanguageCB.Size = new System.Drawing.Size(277, 30);
             this.InterfaceLanguageCB.TabIndex = 16;
@@ -191,11 +201,12 @@
             // 
             // DateCheckBox
             // 
+            this.DateCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.DateCheckBox.AutoSize = true;
             this.DateCheckBox.FlatAppearance.BorderSize = 0;
             this.DateCheckBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DateCheckBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.DateCheckBox.Location = new System.Drawing.Point(43, 593);
+            this.DateCheckBox.Location = new System.Drawing.Point(920, 617);
             this.DateCheckBox.Name = "DateCheckBox";
             this.DateCheckBox.Size = new System.Drawing.Size(242, 26);
             this.DateCheckBox.TabIndex = 18;
@@ -206,23 +217,56 @@
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.rightPanel.Location = new System.Drawing.Point(1319, 0);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(10, 726);
+            this.rightPanel.Size = new System.Drawing.Size(10, 725);
             this.rightPanel.TabIndex = 20;
             // 
             // bottomPanel
             // 
             this.bottomPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottomPanel.Location = new System.Drawing.Point(0, 725);
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(1329, 10);
             this.bottomPanel.TabIndex = 19;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(39, 616);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 22);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "News region";
+            // 
+            // NewsRegionCB
+            // 
+            this.NewsRegionCB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.NewsRegionCB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.NewsRegionCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NewsRegionCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NewsRegionCB.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.NewsRegionCB.FormattingEnabled = true;
+            this.NewsRegionCB.Items.AddRange(new object[] {
+            "All",
+            "Moscow",
+            "Volgograd"});
+            this.NewsRegionCB.Location = new System.Drawing.Point(262, 613);
+            this.NewsRegionCB.Name = "NewsRegionCB";
+            this.NewsRegionCB.Size = new System.Drawing.Size(277, 30);
+            this.NewsRegionCB.TabIndex = 22;
+            this.NewsRegionCB.SelectedIndexChanged += new System.EventHandler(this.NewsRegionCB_SelectedIndexChanged);
+            // 
             // UC_Settings
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.NewsRegionCB);
             this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.DateCheckBox);
@@ -236,6 +280,7 @@
             this.Controls.Add(this.CategoryCB);
             this.Controls.Add(this.SortCB);
             this.Controls.Add(this.CountryCB);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Name = "UC_Settings";
             this.Size = new System.Drawing.Size(1329, 735);
@@ -259,5 +304,7 @@
         private System.Windows.Forms.CheckBox DateCheckBox;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel bottomPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox NewsRegionCB;
     }
 }
