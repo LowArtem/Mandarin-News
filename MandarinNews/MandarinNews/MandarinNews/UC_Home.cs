@@ -501,14 +501,70 @@ namespace MandarinNews
                 }
 
 
-                AuthorRTB.Text = Authors;
-                DescriptionRTB.Text = Description;
-                TitleRTB.Text = Title;
-                SourceRTB.Text = NameOfSource;
-                UrlRTB.Text = URL;
-                ImageBox1.ImageLocation = UrlImage;
-                ResultLbl.Text = TotalResult;
-                PublishAtRTB.Text = PublishedAt;
+                try
+                {
+                    AuthorRTB.Text = Authors;
+                }
+                catch(NullReferenceException)
+                {
+                    AuthorRTB.Text = "";
+                }
+                try
+                {
+                    DescriptionRTB.Text = Description;
+                }
+                catch (NullReferenceException)
+                {
+                    DescriptionRTB.Text = "";
+                }
+                try
+                {
+                    TitleRTB.Text = Title;
+                }
+                catch (NullReferenceException)
+                {
+                    TitleRTB.Text = "";
+                }
+                try
+                {
+                    SourceRTB.Text = NameOfSource;
+                }
+                catch (NullReferenceException)
+                {
+                    SourceRTB.Text = "";
+                }
+                try
+                {
+                    UrlRTB.Text = URL;
+                }
+                catch (NullReferenceException)
+                {
+                    UrlRTB.Text = "";
+                }
+                try
+                {
+                    ImageBox1.ImageLocation = UrlImage;
+                }
+                catch (NullReferenceException)
+                {
+                    ImageBox1.ImageLocation = "";
+                }
+                try
+                {
+                    ResultLbl.Text = TotalResult;
+                }
+                catch (NullReferenceException)
+                {
+                    ResultLbl.Text = "";
+                }
+                try
+                {
+                    PublishAtRTB.Text = PublishedAt;
+                }
+                catch (NullReferenceException)
+                {
+                    PublishAtRTB.Text = "";
+                }                
             }
             catch (NotImplementedException ex)
             {
@@ -520,18 +576,7 @@ namespace MandarinNews
                 ImageBox1.ImageLocation = "";
                 ResultLbl.Text = "";
                 PublishAtRTB.Text = "";
-            }
-            catch(NullReferenceException ex)
-            {
-                AuthorRTB.Text = "";
-                DescriptionRTB.Text = ex.Message + "\nTry to reload this page.";
-                TitleRTB.Text = "Null Reference Exception :(";
-                SourceRTB.Text = "";
-                UrlRTB.Text = "";
-                ImageBox1.ImageLocation = "";
-                ResultLbl.Text = "";
-                PublishAtRTB.Text = "";
-            }
+            }            
         }
     }
 }
