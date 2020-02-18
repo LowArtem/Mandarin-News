@@ -2,6 +2,8 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
+using MandarinNews.Model;
+using System.Collections.Generic;
 
 namespace MandarinNews
 {
@@ -20,8 +22,11 @@ namespace MandarinNews
             string Theme = "";
             string FaceLang = "";
             string OnlyToday = "";
+            string Region = "";
 
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+            this.AutoScaleMode = AutoScaleMode.Inherit;
 
             path = Path.Combine(folderPath, filePath);
 
@@ -42,6 +47,7 @@ namespace MandarinNews
                         Theme = reader.ReadLine();
                         FaceLang = reader.ReadLine();
                         OnlyToday = reader.ReadLine();
+                        Region = reader.ReadLine();
                     }
 
                     if (Lang == "RU")
@@ -100,6 +106,8 @@ namespace MandarinNews
                     Form1.InterfaceLanguage = FaceLang;
 
                     Form1.isOnlyTodaysNews = Convert.ToBoolean(OnlyToday);
+
+                    Form1.RegionSetting = Region;
 
                     reader.Close();
                     fs.Close();
@@ -183,6 +191,14 @@ namespace MandarinNews
                         DateCheckBox.CheckState = CheckState.Unchecked;
                     else
                         DateCheckBox.CheckState = CheckState.Unchecked;
+
+
+                    if (Region == "All")
+                        NewsRegionCB.SelectedIndex = 0;
+                    else if (Region == "Moscow")
+                        NewsRegionCB.SelectedIndex = 1;
+                    else
+                        NewsRegionCB.SelectedIndex = 2;
                 }
                 catch (Exception)
                 {
@@ -191,6 +207,7 @@ namespace MandarinNews
                     SortCB.SelectedIndex = 0;
                     ThemeCB.SelectedIndex = 0;
                     InterfaceLanguageCB.SelectedIndex = 0;
+                    NewsRegionCB.SelectedIndex = 0;
                 }
             }
             else
@@ -200,6 +217,7 @@ namespace MandarinNews
                 SortCB.SelectedIndex = 0;
                 ThemeCB.SelectedIndex = 0;
                 InterfaceLanguageCB.SelectedIndex = 0;
+                NewsRegionCB.SelectedIndex = 0;
             }
             #endregion
 
@@ -308,6 +326,19 @@ namespace MandarinNews
                 Form1.InterfaceLanguage = "ru";
         }
 
+        private void NewsRegionCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Form1.isParamChanged = true;
+            UC_Home.isRegionNewsFilesDownloaded = false;
+
+            if (NewsRegionCB.SelectedIndex == 0)
+                Form1.RegionSetting = "All";
+            if (NewsRegionCB.SelectedIndex == 1)
+                Form1.RegionSetting = "Moscow";
+            if (NewsRegionCB.SelectedIndex == 2)
+                Form1.RegionSetting = "Volgograd";
+        }
+
         private void DateCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             Form1.isParamChanged = true;
@@ -335,6 +366,7 @@ namespace MandarinNews
                 label4.ForeColor = Color.White;
                 label5.ForeColor = Color.White;
                 label6.ForeColor = Color.White;
+                label1.ForeColor = Color.White;
 
                 CategoryCB.ForeColor = Color.White;
                 CategoryCB.BackColor = this.BackColor;
@@ -351,6 +383,9 @@ namespace MandarinNews
                 InterfaceLanguageCB.ForeColor = Color.White;
                 InterfaceLanguageCB.BackColor = this.BackColor;
 
+                NewsRegionCB.ForeColor = Color.White;
+                NewsRegionCB.BackColor = this.BackColor;
+
                 DateCheckBox.BackColor = this.BackColor;
                 DateCheckBox.ForeColor = Color.White;
 
@@ -364,6 +399,7 @@ namespace MandarinNews
                 label4.ForeColor = Color.Black;
                 label5.ForeColor = Color.Black;
                 label6.ForeColor = Color.Black;
+                label1.ForeColor = Color.Black;
 
                 CategoryCB.ForeColor = Color.Black;
                 CategoryCB.BackColor = Color.WhiteSmoke;
@@ -380,6 +416,9 @@ namespace MandarinNews
                 InterfaceLanguageCB.ForeColor = Color.Black;
                 InterfaceLanguageCB.BackColor = Color.WhiteSmoke;
 
+                NewsRegionCB.ForeColor = Color.Black;
+                NewsRegionCB.BackColor = Color.WhiteSmoke;
+
                 DateCheckBox.BackColor = Color.WhiteSmoke;
                 DateCheckBox.ForeColor = Color.Black;
 
@@ -394,6 +433,7 @@ namespace MandarinNews
             int ThemeIndex = ThemeCB.SelectedIndex;
             int CountryIndex = CountryCB.SelectedIndex;
             int CategoryIndex = CategoryCB.SelectedIndex;
+            int RegionIndex = NewsRegionCB.SelectedIndex;
 
             if (Form1.InterfaceLanguage == "en")
             {
@@ -402,6 +442,7 @@ namespace MandarinNews
                 label4.Text = "News category";
                 label5.Text = "Theme";
                 label6.Text = "Interface language";
+                label1.Text = "News Region";
                 DateCheckBox.Text = "Show only today's news";
 
                 SortCB.Items.Clear();
@@ -426,6 +467,11 @@ namespace MandarinNews
                 ThemeCB.Items.Add("Dark blue");
                 ThemeCB.Items.Add("White");
                 ThemeCB.Items.Add("Black");
+
+                NewsRegionCB.Items.Clear();
+                NewsRegionCB.Items.Add("All");
+                NewsRegionCB.Items.Add("Moscow");
+                NewsRegionCB.Items.Add("Volgograd");
             }
             else
             {
@@ -434,6 +480,7 @@ namespace MandarinNews
                 label4.Text = "Категория новостей";
                 label5.Text = "Цвет темы";
                 label6.Text = "Язык интерфейса";
+                label1.Text = "Регион новостей";
                 DateCheckBox.Text = "Показывать только сегодняшние новости";
 
                 SortCB.Items.Clear();
@@ -458,12 +505,18 @@ namespace MandarinNews
                 ThemeCB.Items.Add("Темно-синий");
                 ThemeCB.Items.Add("Белый");
                 ThemeCB.Items.Add("Черный");
+
+                NewsRegionCB.Items.Clear();
+                NewsRegionCB.Items.Add("Все");
+                NewsRegionCB.Items.Add("Москва");
+                NewsRegionCB.Items.Add("Волгоград");
             }
 
             SortCB.SelectedIndex = SortIndex;
             CountryCB.SelectedIndex = CountryIndex;
             ThemeCB.SelectedIndex = ThemeIndex;
             CategoryCB.SelectedIndex = CategoryIndex;
+            NewsRegionCB.SelectedIndex = RegionIndex;
         }
     }
 }

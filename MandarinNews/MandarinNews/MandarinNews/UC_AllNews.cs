@@ -32,6 +32,8 @@ namespace MandarinNews
         public UC_AllNews()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
+            this.AutoScaleMode = AutoScaleMode.Inherit;
 
             ChangeColor();
 
@@ -239,6 +241,7 @@ namespace MandarinNews
                     Model.Parser.ParserSettings(URL, lang);
 
                     string start_parser_error = Model.Parser.StartParser();
+                    //string start_parser_error = "";
 
                     parser = Model.Parser.ParserResult();
 
@@ -288,8 +291,8 @@ namespace MandarinNews
 
             WebPanel.Visible = true;
 
-            InitializeChromium(url);            
-           
+            InitializeChromium(url);
+
             //System.Diagnostics.Process.Start(url);
         }
 
@@ -401,9 +404,9 @@ namespace MandarinNews
         // WebPanel element
         //
         private void BackBtn_Click(object sender, EventArgs e)
-        {
-            AntiFocus.Focus();
+        {            
             WebPanel.Visible = false;
+            AntiFocus.Focus();
             Browser.Dispose();
         }
 

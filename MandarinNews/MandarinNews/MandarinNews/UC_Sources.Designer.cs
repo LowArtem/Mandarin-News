@@ -52,6 +52,7 @@
             // 
             // checkBox1
             // 
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -67,6 +68,7 @@
             // 
             // checkBox2
             // 
+            this.checkBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -82,6 +84,7 @@
             // 
             // checkBox3
             // 
+            this.checkBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox3.AutoSize = true;
             this.checkBox3.Checked = true;
             this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -97,6 +100,7 @@
             // 
             // checkBox4
             // 
+            this.checkBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox4.AutoSize = true;
             this.checkBox4.Checked = true;
             this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -112,6 +116,7 @@
             // 
             // checkBox5
             // 
+            this.checkBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox5.AutoSize = true;
             this.checkBox5.Checked = true;
             this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -127,6 +132,7 @@
             // 
             // checkBox6
             // 
+            this.checkBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox6.AutoSize = true;
             this.checkBox6.Checked = true;
             this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -142,6 +148,7 @@
             // 
             // checkBox7
             // 
+            this.checkBox7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox7.AutoSize = true;
             this.checkBox7.Checked = true;
             this.checkBox7.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -157,6 +164,7 @@
             // 
             // checkBox8
             // 
+            this.checkBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.checkBox8.AutoSize = true;
             this.checkBox8.Checked = true;
             this.checkBox8.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -172,6 +180,7 @@
             // 
             // checkBox9
             // 
+            this.checkBox9.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox9.AutoSize = true;
             this.checkBox9.Checked = true;
             this.checkBox9.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -187,6 +196,7 @@
             // 
             // checkBox10
             // 
+            this.checkBox10.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox10.AutoSize = true;
             this.checkBox10.Checked = true;
             this.checkBox10.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -202,6 +212,7 @@
             // 
             // checkBox11
             // 
+            this.checkBox11.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox11.AutoSize = true;
             this.checkBox11.Checked = true;
             this.checkBox11.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -217,6 +228,7 @@
             // 
             // checkBox12
             // 
+            this.checkBox12.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox12.AutoSize = true;
             this.checkBox12.Checked = true;
             this.checkBox12.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -232,6 +244,7 @@
             // 
             // checkBox13
             // 
+            this.checkBox13.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox13.AutoSize = true;
             this.checkBox13.Checked = true;
             this.checkBox13.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -247,6 +260,7 @@
             // 
             // checkBox14
             // 
+            this.checkBox14.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox14.AutoSize = true;
             this.checkBox14.Checked = true;
             this.checkBox14.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -262,6 +276,7 @@
             // 
             // checkBox15
             // 
+            this.checkBox15.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox15.AutoSize = true;
             this.checkBox15.Checked = true;
             this.checkBox15.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -277,6 +292,7 @@
             // 
             // checkBox16
             // 
+            this.checkBox16.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.checkBox16.AutoSize = true;
             this.checkBox16.Checked = true;
             this.checkBox16.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -292,6 +308,7 @@
             // 
             // ModeCB
             // 
+            this.ModeCB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ModeCB.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ModeCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ModeCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -308,6 +325,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -320,14 +338,16 @@
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.rightPanel.Location = new System.Drawing.Point(1319, 0);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(10, 726);
+            this.rightPanel.Size = new System.Drawing.Size(10, 725);
             this.rightPanel.TabIndex = 37;
             // 
             // bottomPanel
             // 
             this.bottomPanel.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bottomPanel.Location = new System.Drawing.Point(0, 725);
             this.bottomPanel.Name = "bottomPanel";
             this.bottomPanel.Size = new System.Drawing.Size(1329, 10);
